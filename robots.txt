@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dongkuy1124.github.io/EED-Lab/sitemap.xml
+Sitemap: https://eed-lab.github.io/sitemap.xml
