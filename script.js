@@ -524,6 +524,7 @@ const jcrJournalMetrics = Object.freeze({
   "Advanced Science": { topPercent: "7.16", category: "Materials Science, Multidisciplinary" },
   "Chemistry of Materials": { topPercent: "22.13", category: "Materials Science, Multidisciplinary" },
   "Journal of Materials Chemistry A": { topPercent: "13.67", category: "Materials Science, Multidisciplinary" },
+  "Materials Horizons": { topPercent: "11.30", category: "Chemistry, Multidisciplinary" },
   "Nature Communications": { topPercent: "7.35", category: "Multidisciplinary Sciences" },
   "Nature Electronics": { topPercent: "0.27", category: "Engineering, Electrical & Electronic" },
   "Science Advances": { topPercent: "8.82", category: "Multidisciplinary Sciences" },
@@ -540,11 +541,16 @@ const renderPublications = () => {
   if (scholar) scholar.href = data.scholarUrl;
   const container = document.querySelector("[data-publications]");
   if (!container) return;
-  const byYear = data.publications.reduce((acc, publication, index) => {
-    acc[publication.year] ||= [];
-    acc[publication.year].push({ publication, index });
-    return acc;
-  }, {});
+  const periods = [
+    { key: "after", title: "After Hanyang University" },
+    { key: "before", title: "Before Hanyang University" },
+  ];
+  const byPeriod = { after: {}, before: {} };
+  data.publications.forEach((publication, index) => {
+    const period = publication.hanyangPeriod === "before" ? "before" : "after";
+    byPeriod[period][publication.year] ||= [];
+    byPeriod[period][publication.year].push({ publication, index });
+  });
   const nextYear = String(new Date().getFullYear() + 1);
   container.innerHTML = `
     <div class="editor-publication-year-tools">
@@ -555,13 +561,18 @@ const renderPublications = () => {
       <button class="editor-add-publication" type="button" data-add-new-publication-year>Add Year</button>
     </div>
   `;
-  container.innerHTML += Object.keys(byYear)
+  container.innerHTML += periods.map(({ key, title }) => {
+    const byYear = byPeriod[key];
+    if (!Object.keys(byYear).length) return "";
+    return `<section class="publication-period" data-publication-period="${key}" aria-labelledby="publication-period-${key}">
+      <h2 class="publication-period-title" id="publication-period-${key}">${title}</h2>
+      ${Object.keys(byYear)
     .sort((a, b) => Number(b) - Number(a))
     .map(
       (year) => `
-        <section class="publication-year" data-publication-year="${escapeHtml(year)}">
+        <section class="publication-year" data-publication-year="${escapeHtml(year)}" data-period="${key}">
           <div class="publication-year-heading">
-            <h2>${year}</h2>
+            <h3>${year}</h3>
             <button class="editor-add-publication" type="button" data-add-publication-year="${year}">Add to ${year}</button>
           </div>
           <ol>
@@ -585,7 +596,9 @@ const renderPublications = () => {
         </section>
       `,
     )
-    .join("");
+    .join("")}
+    </section>`;
+  }).join("");
   const publicationLists = [...container.querySelectorAll(".publication-year ol")];
   let nextPublicationNumber = publicationLists.reduce((total, list) => total + list.children.length, 0);
   publicationLists.forEach((list) => {
@@ -1244,8 +1257,8 @@ const markDragTargets = () => {
       add("SCHOLAR", ".scholar-button", "scholarButton");
     addAll("LINK", ".link-button", "publicationLink");
     document.querySelectorAll(".publication-year").forEach((element) => {
-      const year = element.dataset.publicationYear || element.querySelector("h2")?.textContent.trim() || "";
-      const key = `publicationYear_${year}`;
+      const year = element.dataset.publicationYear || element.querySelector("h3")?.textContent.trim() || "";
+      const key = `publicationYear_${element.dataset.period}_${year}`;
       element.dataset.dragKey = key;
       targets.push({ label: `YEAR ${year}`, element, key });
     });

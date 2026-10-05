@@ -291,10 +291,20 @@ window.siteData = {
     {
       "year": "2026",
       "firstAuthor": true,
+      "authors": "Dong Un Lim+, Dong Gue Roe+, Yoon Young Choi, Min Sung Kim, Youngjae Yoo, Moon Sung Kang, Seongchan Kim, Sae Byeok Jo, Jeong Ho Cho",
+      "title": "Multi-threshold synaptic transistor for an artificial sensory-pain integrated receptor",
+      "journal": "Materials Horizons",
+      "link": "https://doi.org/10.1039/d6mh01017b",
+      "hanyangPeriod": "after"
+    },
+    {
+      "year": "2026",
+      "firstAuthor": true,
       "authors": "Dong Gue Roe+, Sungjoon Cheon+, Byung Hak Jhun+, Seongil Im+, Jihyeon You, Seonkwon Kim, Youngjae Yoo, Hyunsu Ju, Youngmin You, Jeong Ho Cho",
       "title": "Physical Implementation of Reinforcement Learning via a Signal Summation Process in a Dual-Input Synaptic Transistor: Photoinduced Dipole Inversion of Au(I) Complex with Charge Traps of cPVP",
       "journal": "Advanced Materials",
-      "link": "https://doi.org/10.1002/adma.202516522"
+      "link": "https://doi.org/10.1002/adma.202516522",
+      "hanyangPeriod": "before"
     },
     {
       "year": "2025",
@@ -302,7 +312,8 @@ window.siteData = {
       "authors": "Dong Gue Roe+, Sungjoon Cheon+, Seongil Im+, Sinil Choi, Meeree Kim, Subeen Kim, Youngjae Yoo, Jeong Won Kim, Hyunsu Ju, Sohee Jeong, Jeong Ho Cho",
       "title": "Analog Signal Summation for Reinforcement Learning via Simultaneous Light-Voltage Modulation in a Synaptic Device",
       "journal": "Advanced Science",
-      "link": "https://doi.org/10.1002/advs.202521293"
+      "link": "https://doi.org/10.1002/advs.202521293",
+      "hanyangPeriod": "before"
     },
     {
       "year": "2025",
@@ -310,7 +321,8 @@ window.siteData = {
       "authors": "Sung Hyeon Park+, Dong Gue Roe+, Sang Young Jeong+, Yoon Young Choi, Duho Jang, Sung Joon Cheon, Min Sub Kim, Yeong Don Park, Youngjae Yoo, Dong-Hwan Kim, Han Young Woo, Jeong Ho Cho",
       "title": "Temporal Effect Analysis in an In-Sensor Computing System Enabled by Retention-Engineered Synaptic Devices",
       "journal": "ACS Sensors",
-      "link": "https://doi.org/10.1021/acssensors.5c01495"
+      "link": "https://doi.org/10.1021/acssensors.5c01495",
+      "hanyangPeriod": "before"
     },
     {
       "year": "2024",
@@ -318,7 +330,8 @@ window.siteData = {
       "authors": "Dong Gue Roe+, Sung Hyeon Park+, Sang Young Jeong+, Yoon Young Choi, Jong-Hyun Ahn, Han Young Woo, Jeong Ho Cho",
       "title": "Reconfigurable Logic Gates Capable of Device-Level Parallel Processing Through Multi-Input Synaptic Device",
       "journal": "Advanced Functional Materials",
-      "link": "https://doi.org/10.1002/adfm.202312988"
+      "link": "https://doi.org/10.1002/adfm.202312988",
+      "hanyangPeriod": "before"
     },
     {
       "year": "2024",
@@ -326,7 +339,8 @@ window.siteData = {
       "authors": "Chan Kim+, Dong Gue Roe+, Dong Un Lim+, Yoon Young Choi, Moon Sung Kang, Dong-Hwan Kim, Jeong Ho Cho",
       "title": "Toward human-like adaptability in robotics through a retention-engineered synaptic control system",
       "journal": "Science Advances",
-      "link": "https://doi.org/10.1126/sciadv.adn6217"
+      "link": "https://doi.org/10.1126/sciadv.adn6217",
+      "hanyangPeriod": "before"
     },
     {
       "year": "2023",
@@ -334,7 +348,8 @@ window.siteData = {
       "authors": "Dong Gue Roe+, Dong Hae Ho+, Yoon Young Choi, Young Jin Choi, Seongchan Kim, Sae Byeok Jo, Moon Sung Kang, Jong-Hyun Ahn, Jeong Ho Cho",
       "title": "Humanlike spontaneous motion coordination of robotic fingers through spatial multi-input spike signal multiplexing",
       "journal": "Nature Communications",
-      "link": "https://doi.org/10.1038/s41467-022-34324-3"
+      "link": "https://doi.org/10.1038/s41467-022-34324-3",
+      "hanyangPeriod": "before"
     },
     {
       "year": "2023",
@@ -342,7 +357,8 @@ window.siteData = {
       "authors": "Young Jin Choi+, Dong Gue Roe+, Yoon Young Choi, Seongchan Kim, Sae Byeok Jo, Hwa Sung Lee, Do Hwan Kim, Jeong Ho Cho",
       "title": "Multiplexed Complementary Signal Transmission for a Self-Regulating Artificial Nervous System",
       "journal": "Advanced Science",
-      "link": "https://doi.org/10.1002/advs.202205155"
+      "link": "https://doi.org/10.1002/advs.202205155",
+      "hanyangPeriod": "before"
     },
     {
       "year": "2022",
@@ -350,7 +366,8 @@ window.siteData = {
       "authors": "Dong Hae Ho+, Dong Gue Roe+, Yoon Young Choi, Seongchan Kim, Young Jin Choi, Do Hwan Kim, Sae Byeok Jo, Jeong Ho Cho",
       "title": "Non-von Neumann multi-input spike signal processing enabled by an artificial synaptic multiplexer",
       "journal": "Science Advances",
-      "link": "https://doi.org/10.1126/sciadv.abn1838"
+      "link": "https://doi.org/10.1126/sciadv.abn1838",
+      "hanyangPeriod": "before"
     },
     {
       "year": "2021",
@@ -358,7 +375,8 @@ window.siteData = {
       "authors": "Seongchan Kim+, Dong Gue Roe+, Yoon Young Choi, Hwije Woo, Joongpill Park, Jong Ik Lee, Yongsuk Choi, Sae Byeok Jo, Moon Sung Kang, Young Jae Song, Sohee Jeong, Jeong Ho Cho",
       "title": "Artificial stimulus-response system capable of conscious response",
       "journal": "Science Advances",
-      "link": "https://doi.org/10.1126/sciadv.abe3996"
+      "link": "https://doi.org/10.1126/sciadv.abe3996",
+      "hanyangPeriod": "before"
     },
     {
       "year": "2021",
@@ -366,7 +384,8 @@ window.siteData = {
       "authors": "Dong Gue Roe+, Seongchan Kim+, Yoon Young Choi, Hwije Woo, Moon Sung Kang, Young Jae Song, Jong-Hyun Ahn, Yoonmyung Lee, Jeong Ho Cho",
       "title": "Biologically plausible artificial synaptic array: Replicating Ebbinghaus' memory curve with selective attention",
       "journal": "Advanced Materials",
-      "link": "https://doi.org/10.1002/adma.202007782"
+      "link": "https://doi.org/10.1002/adma.202007782",
+      "hanyangPeriod": "before"
     },
     {
       "year": "2025",
@@ -374,7 +393,8 @@ window.siteData = {
       "authors": "Seung Yeon Ki, In Cheol Kwak, Seonkwon Kim, Jihyun Kim, Dong Gue Roe, Se-Jin Kim, Joohoon Kang, Jeong Ho Cho",
       "title": "Alkali Ion-Incorporated HfO2 Dielectrics for Reconfigurable Neuromorphic Computing",
       "journal": "Advanced Functional Materials",
-      "link": "https://doi.org/10.1002/adfm.202521002"
+      "link": "https://doi.org/10.1002/adfm.202521002",
+      "hanyangPeriod": "before"
     },
     {
       "year": "2025",
@@ -382,7 +402,8 @@ window.siteData = {
       "authors": "Yanran Mao, Yongsuk Choi, Chuan Qian, Dong Gue Roe, Seonkwon Kim, Yuehong Liu, Diandian Chen, Dongsheng Tang, Jia Sun, Jeong Ho Cho",
       "title": "Multimodal In-Sensor Computing with Dual-Phase Organic Synapses for Wearable Fitness Monitoring",
       "journal": "Advanced Materials",
-      "link": "https://doi.org/10.1002/adma.202513904"
+      "link": "https://doi.org/10.1002/adma.202513904",
+      "hanyangPeriod": "before"
     },
     {
       "year": "2025",
@@ -390,7 +411,8 @@ window.siteData = {
       "authors": "Seonkwon Kim, Seongil Im, In Cheol Kwak, Jungwha Lee, Dong Gue Roe, Hyunsu Ju, Jeong Ho Cho",
       "title": "Hardware Implementation of On-Chip Hebbian Learning Through Integrated Neuromorphic Architecture",
       "journal": "Advanced Materials",
-      "link": "https://doi.org/10.1002/adma.202506920"
+      "link": "https://doi.org/10.1002/adma.202506920",
+      "hanyangPeriod": "before"
     },
     {
       "year": "2025",
@@ -398,7 +420,8 @@ window.siteData = {
       "authors": "Diandian Chen, Yongsuk Choi, Chuan Qian, Dong Gue Roe, Hyungjin Kim, Sae Byeok Jo, Youngjae Yoo, Dongsheng Tang, Jeong Ho Cho",
       "title": "Stabilizing Analog Signal Processing of Artificial Synapse Under Heat Fluctuations Through Light-Temperature Antagonistic Operation",
       "journal": "Advanced Functional Materials",
-      "link": "https://doi.org/10.1002/adfm.202405244"
+      "link": "https://doi.org/10.1002/adfm.202405244",
+      "hanyangPeriod": "before"
     },
     {
       "year": "2024",
@@ -406,7 +429,8 @@ window.siteData = {
       "authors": "Seongyeon Yang, Gyumin Jang, Chan Uk Lee, Jaehyun Son, Junwoo Lee, Wooyong Jeong, Dong Gue Roe, Jeong Ho Cho, Jooho Moon",
       "title": "Highly Circularly Polarized Light-Sensitive Chiral One-Dimensional Perovskites Enabled by Antisolvent Engineering",
       "journal": "Advanced Functional Materials",
-      "link": "https://doi.org/10.1002/adfm.202310917"
+      "link": "https://doi.org/10.1002/adfm.202310917",
+      "hanyangPeriod": "before"
     },
     {
       "year": "2024",
@@ -414,7 +438,8 @@ window.siteData = {
       "authors": "Taehee Kim, Do Hyung Chun, Dong Gue Roe, Wook Kim, Jiyeon Lee, Jiwon Kim, Dukhyun Choi, Dae-Geun Choi, Jeong Ho Cho, Jong Hyeok Park",
       "title": "Sculpting the Electronic Nano-Terrain on a Perovskite Film for Efficient Charge Transport",
       "journal": "ACS Nano",
-      "link": "https://doi.org/10.1021/acsnano.4c09605"
+      "link": "https://doi.org/10.1021/acsnano.4c09605",
+      "hanyangPeriod": "before"
     },
     {
       "year": "2024",
@@ -422,7 +447,8 @@ window.siteData = {
       "authors": "Young Jin Choi, Dong Gue Roe, Zhijun Li, Yoon Young Choi, Bogyu Lim, Hoyoul Kong, Se Hyun Kim, Jeong Ho Cho",
       "title": "Weight-Reconfigurable Neuromorphic Computing Systems for Analog Signal Integration",
       "journal": "Advanced Functional Materials",
-      "link": "https://doi.org/10.1002/adfm.202316664"
+      "link": "https://doi.org/10.1002/adfm.202316664",
+      "hanyangPeriod": "before"
     },
     {
       "year": "2023",
@@ -430,7 +456,8 @@ window.siteData = {
       "authors": "Yonghyun Albert Kwon, Jihyun Kim, Sae Byeok Jo, Dong Gue Roe, Dongjoon Rhee, Younguk Song, Byoungwoo Kang, Dohun Kim, Jeongmin Kim, Dae Woo Kim",
       "title": "Wafer-scale transistor arrays fabricated using slot-die printing of molybdenum disulfide and sodium-embedded alumina",
       "journal": "Nature Electronics",
-      "link": "https://doi.org/10.1038/s41928-023-00971-7"
+      "link": "https://doi.org/10.1038/s41928-023-00971-7",
+      "hanyangPeriod": "before"
     },
     {
       "year": "2023",
@@ -438,7 +465,8 @@ window.siteData = {
       "authors": "Hyukmin Kweon, Joo Sung Kim, Seongchan Kim, Haisu Kang, Dong Jun Kim, Hanbin Choi, Dong Gue Roe, Young Jin Choi, Seung Geol Lee, Jeong Ho Cho",
       "title": "Ion trap and release dynamics enables nonintrusive tactile augmentation in monolithic sensory neuron",
       "journal": "Science Advances",
-      "link": "https://doi.org/10.1126/sciadv.adi3827"
+      "link": "https://doi.org/10.1126/sciadv.adi3827",
+      "hanyangPeriod": "before"
     },
     {
       "year": "2023",
@@ -446,7 +474,8 @@ window.siteData = {
       "authors": "In Cheol Kwak, Yoonjoo Lee, Min Je Kim, Young Jin Choi, Dong Gue Roe, Moon Sung Kang, Han Young Woo, Jeong Ho Cho",
       "title": "Solid-State Homojunction Electrochemical Transistors and Logic Gates on Plastic",
       "journal": "Advanced Functional Materials",
-      "link": "https://doi.org/10.1002/adfm.202211740"
+      "link": "https://doi.org/10.1002/adfm.202211740",
+      "hanyangPeriod": "before"
     },
     {
       "year": "2023",
@@ -454,7 +483,8 @@ window.siteData = {
       "authors": "Ye Seul Jung, Jae Woo Park, Ji Yeon Kim, Youngseo Park, Dong Gue Roe, Junseok Heo, Jeong Ho Cho, Yong Soo Cho",
       "title": "Ultrahigh photoresponse in strain-and domain-engineered large-scale MoS2 monolayer films",
       "journal": "Journal of Materials Chemistry A",
-      "link": "https://doi.org/10.1039/d3ta00642e"
+      "link": "https://doi.org/10.1039/d3ta00642e",
+      "hanyangPeriod": "before"
     },
     {
       "year": "2023",
@@ -462,7 +492,8 @@ window.siteData = {
       "authors": "Yongsuk Choi, Dong Hae Ho, Seongchan Kim, Young Jin Choi, Dong Gue Roe, In Cheol Kwak, Jihong Min, Hong Han, Wei Gao, Jeong Ho Cho",
       "title": "Physically defined long-term and short-term synapses for the development of reconfigurable analog-type operators capable of performing health care tasks",
       "journal": "Science Advances",
-      "link": "https://doi.org/10.1126/sciadv.adg5946"
+      "link": "https://doi.org/10.1126/sciadv.adg5946",
+      "hanyangPeriod": "before"
     },
     {
       "year": "2022",
@@ -470,7 +501,8 @@ window.siteData = {
       "authors": "Chuan Qian, Yongsuk Choi, Seonkwon Kim, Seongchan Kim, Young Jin Choi, Dong Gue Roe, Jung Hun Lee, Moon Sung Kang, Wi Hyoung Lee, Jeong Ho Cho",
       "title": "Risk-perceptional and feedback-controlled response system based on NO2-detecting artificial sensory synapse",
       "journal": "Advanced Functional Materials",
-      "link": "https://doi.org/10.1002/adfm.202112490"
+      "link": "https://doi.org/10.1002/adfm.202112490",
+      "hanyangPeriod": "before"
     },
     {
       "year": "2022",
@@ -478,7 +510,8 @@ window.siteData = {
       "authors": "In Cheol Kwak, Wan Ho Cho, Tae Hyun Kwon, Min Je Kim, Jong Ik Lee, Dong Gue Roe, Dong Hae Ho, Sae Byeok Jo, Moon Sung Kang, BongSoo Kim",
       "title": "Allrounder Strategy for Photopatterning Silver Nanowire Network Electrodes",
       "journal": "Chemistry of Materials",
-      "link": "https://doi.org/10.1021/acs.chemmater.2c02513"
+      "link": "https://doi.org/10.1021/acs.chemmater.2c02513",
+      "hanyangPeriod": "before"
     },
     {
       "year": "2022",
@@ -486,7 +519,8 @@ window.siteData = {
       "authors": "Seonkwon Kim, Seongchan Kim, Dong Hae Ho, Dong Gue Roe, Young Jin Choi, Min Je Kim, Ui Jin Kim, Manh Linh Le, Juyoung Kim, Se Hyun Kim",
       "title": "Neurorobotic approaches to emulate human motor control with the integration of artificial synapse",
       "journal": "Science Advances",
-      "link": "https://doi.org/10.1126/sciadv.abo3326"
+      "link": "https://doi.org/10.1126/sciadv.abo3326",
+      "hanyangPeriod": "before"
     },
     {
       "year": "2022",
@@ -494,7 +528,8 @@ window.siteData = {
       "authors": "Seongchan Kim, Yoon Young Choi, Taewan Kim, Yong Min Kim, Dong Hae Ho, Young Jin Choi, Dong Gue Roe, Ju-Hee Lee, Joongpill Park, Ji-Woong Choi",
       "title": "A biomimetic ocular prosthesis system: emulating autonomic pupil and corneal reflections",
       "journal": "Nature Communications",
-      "link": "https://doi.org/10.1038/s41467-022-34448-6"
+      "link": "https://doi.org/10.1038/s41467-022-34448-6",
+      "hanyangPeriod": "before"
     },
     {
       "year": "2021",
@@ -502,7 +537,8 @@ window.siteData = {
       "authors": "Ui Jin Kim, Dong Hae Ho, Yoon Young Choi, Yongsuk Choi, Dong Gue Roe, Yonghyun Albert Kwon, Seongchan Kim, Young Jin Choi, Yejin Heo, Sae Byeok Jo",
       "title": "Deterministic Multimodal Perturbation Enables Neuromorphic-Compatible Signal Multiplexing",
       "journal": "ACS Materials Letters",
-      "link": "https://doi.org/10.1021/acsmaterialslett.1c00586"
+      "link": "https://doi.org/10.1021/acsmaterialslett.1c00586",
+      "hanyangPeriod": "before"
     },
     {
       "year": "2020",
@@ -510,7 +546,8 @@ window.siteData = {
       "authors": "Chuan Qian, Yongsuk Choi, Young Jin Choi, Seongchan Kim, Yoon Young Choi, Dong Gue Roe, Moon Sung Kang, Jia Sun, Jeong Ho Cho",
       "title": "Oxygen-detecting synaptic device for realization of artificial autonomic nervous system for maintaining oxygen homeostasis",
       "journal": "Advanced Materials",
-      "link": "https://doi.org/10.1002/adma.202002653"
+      "link": "https://doi.org/10.1002/adma.202002653",
+      "hanyangPeriod": "before"
     }
   ],
   "customSections": {},
