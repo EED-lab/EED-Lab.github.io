@@ -1,16 +1,1751 @@
-<!doctype html>
-<html lang="ko">
-  <head>
-    <link rel="icon" type="image/png" href="assets/favicon.png?v=2" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="canonical" href="https://eed-lab.github.io/research.html" />
-    <meta property="og:url" content="https://eed-lab.github.io/research.html" />
-    <title>Research | EED Lab</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body data-page="research">
-    <header class="site-header">
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Research | EED Lab</title><style>:root {
+  --ink: #172026;
+  --muted: #5d6972;
+  --line: #dfe6e8;
+  --surface: #ffffff;
+  --soft: #f4f7f8;
+  --teal: #0f7d7e;
+  --amber: #d89a25;
+  --graphite: #2d3438;
+  --shadow: 0 18px 50px rgba(23, 32, 38, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--surface);
+  font-family: Arial, "Noto Sans KR", sans-serif;
+  line-height: 1.6;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+  padding: 0 5vw;
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid rgba(223, 230, 232, 0.86);
+  backdrop-filter: blur(14px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  color: #fff;
+  background: var(--teal);
+  border-radius: 8px;
+  font-weight: 800;
+}
+
+.brand strong,
+.brand small {
+  display: block;
+}
+
+.brand small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown > a {
+  display: inline-flex;
+}
+
+.nav-submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 20;
+  display: none;
+  min-width: 150px;
+  margin-top: 0;
+  padding: 8px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.nav-submenu a {
+  display: block;
+  padding: 10px 12px;
+  white-space: nowrap;
+}
+
+.nav-submenu a:hover,
+.nav-submenu a:focus {
+  color: var(--teal);
+  background: var(--soft);
+}
+
+.nav-dropdown:hover .nav-submenu,
+.nav-dropdown:focus-within .nav-submenu {
+  display: block;
+}
+
+.site-nav a {
+  padding: 10px 12px;
+  border-radius: 6px;
+  color: var(--graphite);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.site-nav a:hover {
+  background: var(--soft);
+  color: var(--teal);
+}
+
+.site-nav a.active {
+  background: rgba(15, 125, 126, 0.1);
+  color: var(--teal);
+}
+
+.menu-button {
+  display: none;
+  width: 42px;
+  height: 42px;
+  padding: 9px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+}
+
+.menu-button span {
+  display: block;
+  height: 2px;
+  margin: 5px 0;
+  background: var(--ink);
+}
+
+.hero {
+  position: relative;
+  min-height: calc(100vh - 72px);
+  overflow: hidden;
+}
+
+.hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.68) 44%, rgba(255, 255, 255, 0.18)),
+    linear-gradient(0deg, rgba(23, 32, 38, 0.18), rgba(23, 32, 38, 0));
+}
+
+.hero-content {
+  position: absolute;
+  top: var(--hero-text-top, 84px);
+  left: var(--hero-text-left, 5vw);
+  z-index: 1;
+  width: min(var(--hero-text-width, 720px), 90vw);
+  padding: 0 0 80px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--teal);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.hero .eyebrow {
+  margin-top: var(--hero-eyebrow-top, 0);
+  transform: translate(var(--hero-eyebrow-x, 0), var(--hero-eyebrow-y, 0));
+}
+
+.hero-content h1 {
+  transform: translate(var(--hero-headline-x, 0), var(--hero-headline-y, 0));
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 680px;
+  margin-bottom: 18px;
+  font-size: clamp(42px, 7vw, var(--hero-headline-size, 76px));
+  line-height: 1.02;
+}
+
+h2 {
+  margin-bottom: 12px;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.12;
+}
+
+h3 {
+  margin-bottom: 8px;
+  font-size: 19px;
+  line-height: 1.25;
+}
+
+.hero-content > p:not(.eyebrow) {
+  max-width: 620px;
+  color: #344047;
+  font-size: var(--hero-intro-size, 20px);
+  transform: translate(var(--hero-intro-x, 0), var(--hero-intro-y, 0));
+}
+
+.page-hero {
+  padding: 92px 5vw 66px;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.8)),
+    url("assets/lab-hero.png") center / cover;
+  border-bottom: 1px solid var(--line);
+}
+
+.page-hero.muted-hero {
+  background: var(--soft);
+}
+
+.page-hero h1 {
+  max-width: 900px;
+  margin-bottom: 14px;
+  font-size: clamp(40px, 6vw, 68px);
+}
+
+.page-hero p:not(.eyebrow) {
+  max-width: 760px;
+  color: var(--muted);
+  font-size: 19px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+  transform: translate(var(--hero-actions-x, 0), var(--hero-actions-y, 0));
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 12px 18px;
+  border-radius: 7px;
+  font-weight: 800;
+}
+
+.button.primary {
+  color: #fff;
+  background: var(--teal);
+}
+
+.button.secondary {
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid var(--line);
+}
+
+.notice-band {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 5vw;
+  color: #fff;
+  background: var(--graphite);
+}
+
+.notice-band strong,
+.notice-band span {
+  display: block;
+}
+
+.notice-band span {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.notice-band a {
+  flex: 0 0 auto;
+  padding: 9px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  border-radius: 6px;
+  font-weight: 800;
+}
+
+.section {
+  padding: 96px 5vw;
+}
+
+.section.muted {
+  background: var(--soft);
+}
+
+.section-heading {
+  max-width: 780px;
+  margin-bottom: 38px;
+}
+
+.section-heading p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.section-heading.compact {
+  margin-bottom: 26px;
+}
+
+.research-grid,
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.research-card,
+.news-grid article,
+.profile,
+.timeline article,
+.contact-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 8px 26px rgba(23, 32, 38, 0.06);
+}
+
+.research-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 680px;
+  padding: 28px;
+  overflow: visible;
+}
+
+.research-visual {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  margin: -4px 0 18px;
+  overflow: hidden;
+  background: #eef3f4;
+  border: 1px solid #dbe9ea;
+  border-radius: 8px;
+}
+
+.research-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.research-card:nth-child(1) .research-visual img {
+  object-position: 36% 50%;
+}
+
+.research-card:nth-child(2) .research-visual img {
+  object-position: 58% 48%;
+}
+
+.research-card:nth-child(3) .research-visual img {
+  object-position: 76% 52%;
+}
+
+.research-visual-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(23, 32, 38, 0.04), rgba(23, 32, 38, 0.44)),
+    linear-gradient(90deg, rgba(15, 125, 126, 0.28), rgba(216, 154, 37, 0.08));
+}
+
+.research-visual-label {
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+  max-width: calc(100% - 28px);
+  padding: 6px 10px;
+  color: #fff;
+  background: rgba(23, 32, 38, 0.76);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+  backdrop-filter: blur(8px);
+}
+
+.research-card span {
+  color: var(--amber);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.research-card h3 {
+  margin-bottom: 10px;
+}
+
+.research-summary {
+  margin-bottom: 18px;
+  font-size: 16px;
+}
+
+.research-detail {
+  margin: 0 0 10px;
+  font-size: 14px;
+}
+
+.research-detail strong {
+  color: var(--ink);
+}
+
+.research-points {
+  display: grid;
+  gap: 8px;
+  margin: 10px 0 18px;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.research-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 12px;
+}
+
+.research-keywords span {
+  padding: 5px 8px;
+  color: var(--teal);
+  background: #eaf5f5;
+  border: 1px solid #cce3e4;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.research-card p,
+.profile p,
+.timeline p,
+.news-grid p,
+.contact-copy p,
+.contact-card span {
+  color: var(--muted);
+}
+
+.people-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) 1.4fr;
+  gap: 18px;
+}
+
+.profile {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  padding: 22px;
+}
+
+.profile.lead {
+  align-items: flex-start;
+  min-height: 230px;
+}
+
+.members-section {
+  display: grid;
+  gap: 28px;
+}
+
+.member-subsection {
+  display: grid;
+  gap: 16px;
+}
+
+.section-heading.compact {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0;
+}
+
+.section-heading.compact h2 {
+  margin: 0;
+}
+
+.member-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.member-card {
+  align-items: flex-start;
+}
+
+.member-photo-wrap {
+  position: relative;
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 150px;
+  height: 180px;
+  overflow: hidden;
+  background: var(--graphite);
+  border-radius: 4px;
+}
+
+.member-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.member-photo[hidden] {
+  display: none;
+}
+
+.member-photo-wrap .avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+
+.empty-note {
+  margin: 0;
+  padding: 20px;
+  color: var(--muted);
+  background: #fff;
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+}
+
+.custom-section {
+  max-width: 980px;
+  min-height: 120px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 8px 26px rgba(23, 32, 38, 0.06);
+  overflow: hidden;
+}
+
+.custom-section-inner {
+  display: grid;
+  gap: 18px;
+}
+
+.embedded-blocks {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.custom-text-block,
+.custom-figure,
+.embedded-block {
+  width: 100%;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: keep-all;
+}
+
+.custom-text-block {
+  padding: 18px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.custom-text-block h2 {
+  margin-top: 0;
+  overflow-wrap: anywhere;
+  word-break: keep-all;
+}
+
+.custom-text-block p {
+  overflow-wrap: anywhere;
+  word-break: keep-all;
+}
+
+.research-card,
+.research-card h3,
+.research-card p {
+  overflow-wrap: anywhere;
+  word-break: keep-all;
+}
+
+.custom-figure {
+  position: relative;
+  display: grid;
+  gap: 12px;
+  min-height: 260px;
+}
+
+.custom-image,
+.custom-image-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 40px;
+  border-radius: 8px;
+}
+
+.custom-image {
+  display: block;
+  object-fit: cover;
+}
+
+.custom-image-placeholder {
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  background: var(--soft);
+  border: 1px dashed var(--line);
+  font-weight: 800;
+}
+
+.editor-add-member {
+  display: none;
+  min-height: 40px;
+  padding: 9px 14px;
+  color: #fff;
+  background: var(--teal);
+  border: 0;
+  border-radius: 7px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+body.editor-controls-mode .editor-add-member {
+  display: inline-flex;
+  align-items: center;
+}
+
+.editor-photo-upload {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  display: none;
+  min-height: 28px;
+  padding: 5px 8px;
+  color: #fff;
+  background: rgba(15, 125, 126, 0.94);
+  border: 0;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.editor-photo-upload input {
+  display: none;
+}
+
+body.editor-controls-mode .editor-photo-upload,
+body.editor-controls-mode .editor-photo-upload:focus {
+  display: inline-flex;
+  align-items: center;
+}
+
+body.insert-mode [data-drag-key] {
+  cursor: crosshair !important;
+  outline: 2px dashed rgba(15, 125, 126, 0.65);
+  outline-offset: 6px;
+}
+
+[data-drag-key].editor-scaled-content {
+  overflow: hidden;
+}
+
+[data-drag-key].editor-scaled-content > :not([data-editor-resize-handle]) {
+  transform: scale(var(--editor-content-scale, 1));
+  transform-origin: top left;
+}
+
+body.insert-mode a {
+  pointer-events: none;
+}
+
+.avatar {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  color: #fff;
+  background: var(--graphite);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.member-list {
+  display: grid;
+  gap: 14px;
+}
+
+.profile a {
+  color: var(--teal);
+  font-weight: 800;
+}
+
+.professor-profile {
+  align-items: flex-start;
+  max-width: 980px;
+  margin-bottom: 18px;
+}
+
+.professor-profile .member-photo-wrap {
+  width: 220px;
+  height: 260px;
+}
+
+.professor-profile .member-name {
+  margin-top: 0;
+  font-size: clamp(34px, 4vw, 48px);
+  line-height: 1.08;
+}
+
+.member-name,
+.lab-member {
+  font-weight: 900;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.role,
+.date-note {
+  font-weight: 800;
+}
+
+.cv-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.cv-card {
+  padding: 26px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 8px 26px rgba(23, 32, 38, 0.06);
+}
+
+.cv-card ul {
+  display: grid;
+  gap: 18px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.cv-card li span {
+  display: block;
+  color: var(--muted);
+}
+
+.timeline {
+  display: grid;
+  gap: 14px;
+}
+
+.timeline article {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 20px;
+  padding: 24px;
+}
+
+.timeline time,
+.news-grid time {
+  color: var(--teal);
+  font-weight: 900;
+}
+
+.news-grid article {
+  padding: 24px;
+}
+
+.contact-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.75fr);
+  gap: 30px;
+  align-items: start;
+}
+
+.contact-copy {
+  max-width: 720px;
+}
+
+.contact-card {
+  display: grid;
+  gap: 8px;
+  padding: 28px;
+  font-style: normal;
+}
+
+.contact-card a {
+  color: var(--teal);
+  font-weight: 900;
+}
+
+.scholar-button {
+  margin-top: 22px;
+}
+
+.publications {
+  display: grid;
+  gap: 34px;
+}
+
+.publication-year {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 28px;
+  padding-bottom: 34px;
+  border-bottom: 1px solid var(--line);
+}
+
+.publication-year h3 {
+  position: sticky;
+  top: 92px;
+  align-self: start;
+  margin: 0;
+  color: var(--teal);
+  font-size: 30px;
+}
+
+.publication-year ol {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+  padding-left: 24px;
+}
+
+.publication-year li {
+  padding: 22px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 8px 26px rgba(23, 32, 38, 0.06);
+}
+
+.publication-year li::marker {
+  color: var(--teal);
+  font-weight: 900;
+}
+
+.publication-year-heading {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.editor-publication-year-tools {
+  display: none;
+  gap: 12px;
+  align-items: end;
+  margin-bottom: 26px;
+  padding: 16px;
+  background: #fff;
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+}
+
+.editor-publication-year-tools label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.editor-publication-year-tools input {
+  width: 140px;
+  min-height: 38px;
+  padding: 0 10px;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+}
+
+.editor-add-publication {
+  display: none;
+  min-height: 38px;
+  padding: 8px 12px;
+  color: #fff;
+  background: var(--teal);
+  border: 0;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+body.editor-controls-mode .editor-add-publication {
+  display: inline-flex;
+  align-items: center;
+}
+
+body.editor-controls-mode .editor-publication-year-tools {
+  display: flex;
+}
+
+.jcr-note {
+  max-width: 760px;
+  margin-top: -8px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.authors {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.pub-title {
+  margin-bottom: 8px;
+  font-weight: 900;
+  line-height: 1.45;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  margin-left: 8px;
+  padding: 3px 8px;
+  color: #fff;
+  background: var(--amber);
+  border-radius: 6px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.jcr-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  margin-left: 8px;
+  padding: 3px 8px;
+  color: #075f62;
+  background: #e6f5f4;
+  border: 1px solid #a7d8d5;
+  border-radius: 6px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 900;
+  white-space: nowrap;
+}
+.link-button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  margin-left: 8px;
+  padding: 4px 10px;
+  color: #fff;
+  background: var(--teal);
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.site-footer {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 5vw;
+  color: rgba(255, 255, 255, 0.76);
+  background: var(--ink);
+}
+
+.site-footer a {
+  color: #fff;
+  font-weight: 800;
+}
+
+@media (max-width: 820px) {
+  .site-header {
+    min-height: 66px;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 66px;
+    right: 5vw;
+    left: 5vw;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+  }
+
+  .nav-dropdown {
+    display: grid;
+  }
+
+  .nav-submenu {
+    position: static;
+    display: grid;
+    min-width: 0;
+    margin: 0 0 4px 14px;
+    padding: 4px;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .site-nav.is-open {
+    display: flex;
+  }
+
+  .site-nav a {
+    padding: 13px 12px;
+  }
+
+  .hero {
+    min-height: 680px;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.8) 58%, rgba(255, 255, 255, 0.36));
+  }
+
+  .hero-content {
+    padding-top: 0;
+  }
+
+  .notice-band,
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .research-grid,
+  .news-grid,
+  .people-layout,
+  .member-card-grid,
+  .contact-section,
+  .cv-grid,
+  .publication-year {
+    grid-template-columns: 1fr;
+  }
+
+  .publication-year h3 {
+    position: static;
+  }
+
+  .timeline article {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .profile {
+    align-items: flex-start;
+  }
+
+  .professor-profile .member-photo-wrap,
+  .member-photo-wrap {
+    width: 150px;
+    height: 180px;
+  }
+
+  .professor-profile .member-name {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 520px) {
+  .brand small {
+    display: none;
+  }
+
+  .hero-content {
+    width: min(var(--hero-text-width, 720px), 90vw);
+    padding-bottom: 90px;
+  }
+
+  .hero-content > p:not(.eyebrow) {
+    font-size: 17px;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .profile {
+    flex-direction: column;
+  }
+
+  .section {
+    padding: 72px 5vw;
+  }
+}
+
+/* Research page: editorial theme layout */
+.research-framework {
+  background: var(--soft);
+}
+
+.research-model-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.research-model-grid article {
+  padding: 26px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.research-model-grid h3 {
+  margin: 6px 0 10px;
+  font-size: 21px;
+}
+
+.research-model-grid article > p:last-child {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.research-themes {
+  padding-top: 72px;
+}
+
+.research-themes-list {
+  display: grid;
+  gap: 44px;
+}
+
+.research-theme-card {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  align-items: stretch;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.research-theme-card:nth-child(even) .research-theme-image {
+  order: 2;
+}
+
+.research-theme-image {
+  min-height: 420px;
+}
+
+.research-theme-card .research-visual {
+  height: 100%;
+  min-height: 420px;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+}
+
+.research-theme-card .research-visual img {
+  object-position: center;
+}
+
+.research-theme-copy {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(30px, 4vw, 58px);
+}
+
+.research-theme-copy .eyebrow {
+  margin-bottom: 12px;
+}
+
+.research-theme-copy h2 {
+  margin: 0 0 16px;
+  font-size: clamp(27px, 3vw, 40px);
+}
+
+.research-theme-copy .research-summary {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.research-theme-copy .research-keywords {
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+@media (max-width: 900px) {
+  .research-model-grid,
+  .research-theme-card {
+    grid-template-columns: 1fr;
+  }
+
+  .research-theme-card:nth-child(even) .research-theme-image {
+    order: 0;
+  }
+
+  .research-theme-image,
+  .research-theme-card .research-visual {
+    min-height: 260px;
+  }
+}
+/* Compact Research theme layout for laptop screens */
+.research-themes {
+  padding-top: 28px;
+}
+
+.research-theme-card {
+  grid-template-columns: minmax(380px, 0.92fr) minmax(0, 1.08fr);
+}
+
+.research-theme-image,
+.research-theme-card .research-visual {
+  min-height: 380px;
+}
+
+.research-theme-copy {
+  padding: 38px 44px;
+}
+
+.research-theme-copy h2 {
+  font-size: clamp(28px, 2.6vw, 38px);
+}
+
+.research-theme-copy .research-summary {
+  margin-bottom: 14px;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.research-theme-copy .research-detail {
+  margin-bottom: 8px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.research-theme-copy .research-points {
+  gap: 6px;
+  margin: 8px 0 12px;
+}
+
+@media (max-width: 1100px) {
+  .research-theme-card {
+    grid-template-columns: minmax(330px, 0.88fr) minmax(0, 1.12fr);
+  }
+
+  .research-theme-image,
+  .research-theme-card .research-visual {
+    min-height: 330px;
+  }
+
+  .research-theme-copy {
+    padding: 30px 32px;
+  }
+}
+
+@media (max-width: 760px) {
+  .research-theme-card {
+    grid-template-columns: 1fr;
+  }
+
+  .research-theme-image,
+  .research-theme-card .research-visual {
+    min-height: 230px;
+  }
+}
+/* Keep every theme image in a stable frame independent of text length. */
+.research-theme-card {
+  align-items: start;
+}
+
+.research-theme-image {
+  min-height: 0;
+  align-self: start;
+}
+
+.research-theme-card .research-visual {
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 16 / 10;
+}
+
+@media (max-width: 1100px) {
+  .research-theme-image,
+  .research-theme-card .research-visual {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .research-theme-image,
+  .research-theme-card .research-visual {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+}
+/* Research themes are responsive content blocks, not free-size editor canvases. */
+.research-theme-card {
+  width: 100% !important;
+  min-width: 0 !important;
+  transform: none !important;
+  grid-template-columns: minmax(380px, 46%) minmax(0, 54%) !important;
+}
+
+.research-theme-copy,
+.research-theme-copy > * {
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  transform: none !important;
+}
+
+.research-theme-copy h2 {
+  word-break: keep-all !important;
+  overflow-wrap: break-word;
+  white-space: normal !important;
+}
+
+@media (max-width: 900px) {
+  .research-theme-card {
+    grid-template-columns: 1fr !important;
+  }
+}
+/* Empty member-photo state after an editor removes only the image. */
+.member-photo-wrap .avatar.photo-placeholder {
+  position: relative;
+  color: transparent;
+  background: #edf4f4;
+}
+
+.member-photo-wrap .avatar.photo-placeholder::before {
+  content: "";
+  width: 46px;
+  height: 34px;
+  border: 2px solid #7c9ca0;
+  border-radius: 4px;
+  background: linear-gradient(145deg, transparent 48%, #a7c1c3 49% 57%, transparent 58%);
+}
+
+.member-photo-wrap .avatar.photo-placeholder::after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  margin: -9px 0 0 22px;
+  background: #7c9ca0;
+  border-radius: 50%;
+}
+/* Person silhouette for empty member photos. */
+.member-photo-wrap .avatar.photo-placeholder::before {
+  width: 64px;
+  height: 64px;
+  border: 0;
+  border-radius: 0;
+  background:
+    radial-gradient(circle at 50% 28%, #6f9094 0 11px, transparent 12px),
+    radial-gradient(ellipse at 50% 100%, #6f9094 0 28px, transparent 29px);
+}
+
+.member-photo-wrap .avatar.photo-placeholder::after {
+  display: none;
+}
+/* Outlined profile icon for empty member photos. */
+.member-photo-wrap .avatar.photo-placeholder::before {
+  width: 104px;
+  height: 104px;
+  border: 3px solid #263238;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.member-photo-wrap .avatar.photo-placeholder::after {
+  display: block;
+  width: 62px;
+  height: 72px;
+  margin: 12px 0 0 0;
+  border: 3px solid #263238;
+  border-top: 0;
+  border-radius: 0 0 42px 42px;
+  background:
+    radial-gradient(ellipse at 50% 17px, transparent 0 16px, #263238 17px 20px, transparent 21px),
+    linear-gradient(#edf4f4, #edf4f4);
+  clip-path: polygon(0 42%, 18% 34%, 25% 0, 75% 0, 82% 34%, 100% 42%, 100% 100%, 0 100%);
+}
+/* Generated profile placeholder image used after a member photo is removed. */
+.member-photo-wrap .avatar.photo-placeholder {
+  background: #fff url("assets/profile-placeholder.png") center / 74% auto no-repeat;
+}
+
+.member-photo-wrap .avatar.photo-placeholder::before,
+.member-photo-wrap .avatar.photo-placeholder::after {
+  display: none;
+}
+.editor-controls-mode .research-keyword-add {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  min-height: 28px;
+  padding: 0;
+  color: #0f7d7e;
+  background: #fff;
+  border: 1px dashed #8fc4c6;
+  border-radius: 999px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.editor-controls-mode .research-keyword-add:hover {
+  color: #fff;
+  background: #0f7d7e;
+}
+.editor-controls-mode .research-keyword-delete {
+  width: 18px;
+  height: 18px;
+  margin: 0 1px 0 -12px;
+  padding: 0;
+  color: #fff;
+  background: #c74436;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.editor-controls-mode .research-keyword-delete:hover {
+  background: #982d23;
+}
+
+/* Balanced desktop proportions for image-led research themes. */
+@media (min-width: 901px) {
+  .research-theme-card {
+    grid-template-columns: minmax(340px, 42%) minmax(0, 58%) !important;
+  }
+
+  .research-theme-card .research-visual {
+    aspect-ratio: 2 / 1;
+  }
+
+  .research-theme-copy {
+    padding: 30px 44px;
+  }
+}
+
+/* Shared desktop geometry: laptop and wide desktop use the same content scale. */
+@media (min-width: 901px) {
+  .hero-content {
+    width: min(var(--hero-text-width, 720px), calc(100vw - 10vw));
+  }
+
+  .hero-content h1 {
+    max-width: 680px;
+    font-size: var(--hero-headline-size, 76px);
+  }
+
+  .hero-content > p:not(.eyebrow) {
+    max-width: 620px;
+    font-size: var(--hero-intro-size, 20px);
+  }
+
+  .research-theme-card .research-visual {
+    aspect-ratio: 2 / 1;
+  }
+}
+/* Mobile-first overrides: saved desktop positions never control the phone layout. */
+@media (max-width: 820px) {
+  .hero {
+    min-height: max(620px, calc(100svh - 66px));
+  }
+
+  .hero img {
+    object-position: center;
+  }
+
+  .hero-content {
+    top: clamp(86px, 14svh, 118px) !important;
+    left: 6vw !important;
+    width: 88vw !important;
+    max-width: 620px;
+    padding-bottom: 56px;
+  }
+
+  .hero-content h1 {
+    max-width: 620px;
+    font-size: 56px !important;
+    line-height: 1.04;
+  }
+
+  .hero-content > p:not(.eyebrow) {
+    max-width: 560px;
+    font-size: 18px !important;
+    line-height: 1.65;
+  }
+
+  .page-hero {
+    padding: 66px 6vw 48px;
+  }
+
+  .page-hero h1 {
+    font-size: 48px;
+  }
+
+  .section,
+  .research-themes {
+    padding-right: 6vw;
+    padding-left: 6vw;
+  }
+
+  .research-theme-copy {
+    padding: 28px 24px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero {
+    min-height: 610px;
+  }
+
+  .hero-content {
+    top: 82px !important;
+  }
+
+  .hero-content h1 {
+    font-size: 42px !important;
+    line-height: 1.06;
+  }
+
+  .hero-content > p:not(.eyebrow) {
+    font-size: 16px !important;
+  }
+
+  .hero-actions {
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .page-hero h1 {
+    font-size: 38px;
+  }
+
+  .research-theme-copy {
+    padding: 24px 20px;
+  }
+
+  .research-theme-copy h2 {
+    font-size: 28px;
+  }
+}
+/* Keep every desktop research image flush with its matching description card. */
+@media (min-width: 901px) {
+  .research-theme-card {
+    align-items: stretch;
+  }
+
+  .research-theme-image {
+    display: block;
+    align-self: stretch;
+    min-height: 0;
+  }
+
+  .research-theme-card .research-visual {
+    display: block;
+    height: 100%;
+    min-height: 100%;
+    aspect-ratio: auto;
+  }
+
+  .research-theme-card .research-visual img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+/* Keep the image-to-copy ratio identical when even research themes reverse sides. */
+@media (min-width: 901px) {
+  .research-theme-card:nth-child(even) {
+    grid-template-columns: minmax(0, 58%) minmax(340px, 42%) !important;
+  }
+}
+/* Fixed desktop research-theme ratio: image 42%, copy 58%. */
+@media (min-width: 901px) {
+  .research-theme-card {
+    grid-template-columns: 42% 58% !important;
+  }
+
+  .research-theme-card:nth-child(even) {
+    grid-template-columns: 58% 42% !important;
+  }
+}
+/* EED Lab logo in the site header. */
+.brand-mark { overflow: hidden; background: #ffffff; }
+.brand-mark img { display: block; width: 100%; height: 100%; object-fit: contain; }
+/* Keep the header mark circular as well as the browser favicon. */
+.brand-mark { border-radius: 50%; }
+/* Compact home recruiting and footer information into one bar. */
+body[data-page="home"] .notice-band {
+  gap: 20px;
+  padding: 16px 5vw;
+}
+body[data-page="home"] .notice-summary {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  gap: 18px;
+  min-width: 0;
+}
+body[data-page="home"] .notice-summary [data-home-notice-text] {
+  color: #fff;
+  font-weight: 700;
+}
+body[data-page="home"] .notice-copyright {
+  flex: 0 0 auto;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+@media (max-width: 700px) {
+  body[data-page="home"] .notice-band { align-items: flex-start; }
+  body[data-page="home"] .notice-summary { align-items: flex-start; flex-direction: column; gap: 5px; }
+  body[data-page="home"] .notice-band a { margin-top: 1px; }
+}
+/* Home bottom bar: recruiting message above copyright, action on the right. */
+body[data-page="home"] .notice-band {
+  min-height: 86px;
+  padding: 18px 5vw;
+}
+body[data-page="home"] .notice-summary {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+body[data-page="home"] .notice-summary [data-home-notice-text] {
+  font-size: 1.08rem;
+  line-height: 1.35;
+}
+body[data-page="home"] .notice-copyright {
+  font-size: 0.82rem;
+}
+@media (max-width: 700px) {
+  body[data-page="home"] .notice-band { min-height: 0; }
+}
+
+.publication-period { display: grid; gap: 34px; min-width: 0; }
+.publication-period-title { margin: 0; padding-bottom: 16px; border-bottom: 2px solid var(--teal); color: #000; font-size: clamp(24px, 3vw, 34px); line-height: 1.25; }
+.publication-period + .publication-period { margin-top: 20px; }
+
+
+html{overflow-x:hidden}body{overflow-x:clip}[hidden]{display:none!important}.theme-unit{min-width:0}.theme-unit .research-theme-card{margin:0}.theme-unit .research-theme-copy{display:flex;flex-direction:column;align-items:stretch}.more-row{margin-top:auto;padding-top:24px;display:flex;justify-content:flex-end}.more-button,.back-button{font:inherit;cursor:pointer;background:white;color:#125d60;border:1px solid #125d60;border-radius:6px;padding:11px 23px;font-weight:700;display:inline-flex;gap:20px;align-items:center}.more-button:hover,.back-button:hover{background:#edf5f4}.more-button:focus-visible,.back-button:focus-visible,.paper-card:focus-visible{outline:3px solid #126a86;outline-offset:5px}
+.paper-list{margin-top:22px}.paper-card{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);overflow:hidden;border:1px solid #d3dfdd;border-radius:10px;background:#fff;color:inherit;text-decoration:none;box-shadow:0 8px 30px #122f3210;transition:box-shadow .2s,transform .2s}.paper-card:hover{transform:translateY(-3px);box-shadow:0 12px 34px #122f3220}.paper-thumb{padding:24px;background:white;display:flex;align-items:center}.paper-thumb img{display:block;width:100%;height:auto;object-fit:contain}.paper-copy{padding:36px;display:flex;flex-direction:column;justify-content:center}.paper-copy h3{font-size:clamp(22px,2.4vw,30px);line-height:1.5;letter-spacing:-.03em;margin:12px 0 28px;color:#101d20}.paper-cta{color:#126569;font-weight:700;font-size:14px}.empty-paper{padding:28px;background:#f3f7f6;border-radius:8px;color:#647470}
+.screen{transition:transform .36s ease,opacity .3s ease}.screen.leaving{transform:translateX(-100px);opacity:0;pointer-events:none}.screen.entering{transform:translateX(100px);opacity:0}.detail-page{max-width:1120px;margin:auto;padding:64px 28px 100px}.detail-page h1{font-size:clamp(30px,4.5vw,52px);line-height:1.3;letter-spacing:-.04em;margin:22px 0 36px;color:#111}.detail-page .eyebrow{margin-top:50px}.detail-figure{margin:0;padding:28px;background:white;border:1px solid #dbe3e1;border-radius:12px}.detail-figure img{display:block;width:100%;height:auto}.detail-placeholder{margin-top:32px;padding:32px;border-top:1px solid #d4dfdd;color:#647470;line-height:1.8}.detail-placeholder h2{font-size:21px;color:#15292b;margin:0 0 12px}.review-label{font-size:12px;color:#6a7777}
+@media(max-width:720px){.paper-card{grid-template-columns:1fr}.paper-copy{padding:24px}.paper-thumb{padding:16px}.detail-page{padding:36px 20px 70px}.detail-figure{padding:12px}.more-row{padding-top:20px}}
+@media(prefers-reduced-motion:reduce){.screen,.paper-card{transition:none!important}.screen.leaving,.screen.entering{transform:none}}
+.paper-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.paper-card{display:flex;flex-direction:column;min-width:0}.paper-thumb{padding:16px;aspect-ratio:1.65;flex-shrink:0}.paper-thumb img{width:100%;height:100%;object-fit:contain}.paper-copy{padding:24px;flex:1;justify-content:flex-start}.paper-copy h3{font-size:22px;margin:10px 0 28px}.paper-copy .eyebrow{font-size:10px;line-height:1.6}.paper-cta{margin-top:auto}.empty-paper{grid-column:1/-1}@media(max-width:1050px){.paper-list{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:650px){.paper-list{grid-template-columns:1fr}}
+.second-figure{margin-top:28px}.detail-placeholder p{font-size:18px;color:#283c40;line-height:1.95}.detail-arrow{position:fixed;top:50%;transform:translateY(-50%);z-index:50;width:48px;height:64px;border:1px solid #cadbd8;background:#fffffff2;box-shadow:0 5px 22px #16323018;border-radius:12px;color:#135f65;font-size:42px;cursor:pointer;display:grid;place-items:center;line-height:1}.detail-arrow:hover{background:#e9f3f1}.detail-arrow:focus-visible{outline:3px solid #126a86;outline-offset:3px}.detail-arrow.prev{left:16px}.detail-arrow.next{right:16px}.research-counter{text-align:right;font-size:13px;color:#607671;margin:0 0 18px}.detail-page{max-width:1240px;padding-left:80px;padding-right:80px}.detail-page.switch-left{animation:slideLeft .3s ease}.detail-page.switch-right{animation:slideRight .3s ease}@keyframes slideLeft{from{opacity:.2;transform:translateX(45px)}to{opacity:1;transform:translateX(0)}}@keyframes slideRight{from{opacity:.2;transform:translateX(-45px)}to{opacity:1;transform:translateX(0)}}@media(max-width:650px){.detail-page{padding-left:44px;padding-right:44px}.detail-arrow{width:32px;height:48px;font-size:30px;border-radius:8px}.detail-arrow.prev{left:5px}.detail-arrow.next{right:5px}.detail-placeholder{padding:24px 0}.detail-placeholder p{font-size:16px}}@media(prefers-reduced-motion:reduce){.detail-page.switch-left,.detail-page.switch-right{animation:none}}
+
+.detail-page{max-width:1480px;padding:26px 36px 56px;margin:auto}.detail-page>.eyebrow{margin:22px 0 8px}.detail-page h1{font-size:clamp(27px,3vw,42px);line-height:1.3;margin:0 0 22px;max-width:none}.back-button{border:0;padding:6px 0;background:transparent;font-size:14px;color:#50656b}.detail-arrows{position:sticky;top:76px;z-index:60;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:18px;padding:10px 12px;margin:18px 0 20px;border:1px solid #c9d9d6;border-radius:10px;background:#f1f6f5f5;backdrop-filter:blur(8px);box-shadow:0 3px 12px #1b393a0b}.detail-arrow{position:static;transform:none;width:auto;height:44px;font-size:15px;font-weight:750;padding:0 18px;display:flex;gap:14px;border:0;border-radius:7px;color:#fff;background:#145e64;box-shadow:none;cursor:pointer}.detail-arrow.prev{justify-self:start}.detail-arrow.next{justify-self:end}.detail-arrow:hover{background:#0c4248}.detail-arrow span{font-size:24px}.research-counter{margin:0;text-align:center;font-size:14px;color:#294d51;font-weight:700}.detail-placeholder{padding:0;margin:0 0 24px;border:0;max-width:1160px}.detail-placeholder h2{margin:0 0 10px;font-size:21px}.detail-placeholder p{font-size:17px;line-height:1.85;margin:0 0 10px;color:#263b40}.paper-source{display:inline-block;margin-top:4px;color:#145e64;font-weight:700;text-underline-offset:4px;font-size:14px}.research-figures{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}.research-figures .detail-figure{margin:0;padding:16px;border-radius:9px;min-width:0}.research-figures img{width:100%;height:auto;object-fit:contain}.research-figures figcaption{font-size:13px;font-weight:650;line-height:1.5;color:#466065;margin-top:12px;padding-top:10px;border-top:1px solid #e1e8e6}.research-figures:has(#additional-figure[hidden]){grid-template-columns:1fr;max-width:850px}.detail-page.switch-left,.detail-page.switch-right{animation:none}
+@media(max-width:850px){.detail-page{padding:22px 20px 40px}.research-figures{grid-template-columns:1fr}.detail-arrows{top:70px;gap:8px;padding:8px}.detail-arrow{font-size:13px;padding:0 12px;height:42px}.detail-placeholder p{font-size:16px}.detail-page h1{margin-bottom:18px}}
+
+.back-button{display:inline-flex;align-items:center;gap:12px;padding:12px 18px;border:1px solid #123e43;border-radius:8px;background:#173f45;color:#fff;font-size:15px;font-weight:750;box-shadow:0 3px 9px #143c4520;min-height:48px}.back-button:hover{background:#0c2d32;color:#fff}.back-button:focus-visible{outline:3px solid #188b9a;outline-offset:4px}.back-button kbd{font:600 11px system-ui;padding:3px 6px;border:1px solid #a0c4c9;border-radius:4px;background:#ffffff15;color:#fff}
+.research-figures{align-items:stretch}.research-figures .detail-figure{display:flex;flex-direction:column;height:100%;box-sizing:border-box}.research-figures .detail-figure img{display:block;flex:none;width:100%;height:auto;aspect-ratio:1.55;object-fit:contain;background:white}.research-figures .detail-figure figcaption{margin-top:12px;min-height:36px;box-sizing:border-box;display:flex;align-items:center}.detail-placeholder p{margin-bottom:14px}.paper-card .paper-copy{flex:1}.paper-card .paper-copy h3{min-height:3em}
+@media(max-width:650px){.back-button{font-size:13px;padding:11px 13px;gap:8px}.research-figures .detail-figure figcaption{min-height:40px;font-size:12px}}
+</style><style>
+/* Review adjustment: navigation spacing and aligned content width. */
+.detail-page > .detail-arrows { margin-bottom: 36px; }
+.detail-page > .eyebrow { margin-top: 0; }
+.detail-page > .detail-placeholder { width: 100%; max-width: none; box-sizing: border-box; }
+.detail-placeholder p { text-align: justify; text-align-last: left; word-break: normal; overflow-wrap: break-word; }
+@media (max-width: 650px) {
+  .detail-page > .detail-arrows { margin-bottom: 28px; }
+}
+</style><style>
+.detail-page[data-research="research-traffic"] .research-figures .detail-figure img{aspect-ratio:1.18;object-fit:contain;width:100%;height:auto;background:#fff}
+#paper-link-2 > img{width:100%;aspect-ratio:1.65;object-fit:contain;background:#fff}
+</style><style>:is(#papers-0,#papers-1,#papers-2){grid-template-columns:repeat(2,minmax(0,1fr))}.paper-copy p{margin:0 0 24px;line-height:1.75}.paper-copy h3{margin-bottom:16px}@media(max-width:650px){:is(#papers-0,#papers-1,#papers-2){grid-template-columns:1fr}}</style><style>
+/* Explicit image viewport prevents source dimensions from changing card composition. */
+:is(#papers-0,#papers-1,#papers-2){align-items:stretch;gap:24px}
+:is(#papers-0,#papers-1,#papers-2) .paper-card{display:flex;flex-direction:column;align-self:stretch;min-width:0}
+:is(#papers-0,#papers-1,#papers-2) .paper-thumb{position:relative;display:block;box-sizing:border-box;width:100%;height:auto;min-height:0;aspect-ratio:1.6;padding:0;flex:0 0 auto;overflow:hidden;background:#fff}
+:is(#papers-0,#papers-1,#papers-2) .paper-thumb img{position:absolute;inset:18px;width:calc(100% - 36px);height:calc(100% - 36px);max-width:none;max-height:none;object-fit:contain;object-position:center;display:block}
+:is(#papers-0,#papers-1,#papers-2) .paper-copy{display:grid;grid-template-rows:auto minmax(3.1em,auto) minmax(3.5em,auto) auto;align-content:start;gap:16px;padding:24px;flex:1;box-sizing:border-box}
+:is(#papers-0,#papers-1,#papers-2) .paper-copy .eyebrow{margin:0;line-height:1.6}
+:is(#papers-0,#papers-1,#papers-2) .paper-copy h3{margin:0;min-height:0;font-size:22px;line-height:1.5}
+:is(#papers-0,#papers-1,#papers-2) .paper-copy p{margin:0;line-height:1.75}
+:is(#papers-0,#papers-1,#papers-2) .paper-copy .paper-cta{margin:0;padding-top:8px;align-self:end}
+@media(max-width:650px){:is(#papers-0,#papers-1,#papers-2) .paper-copy{padding:20px;grid-template-rows:auto auto auto auto;gap:14px}:is(#papers-0,#papers-1,#papers-2) .paper-copy h3{font-size:20px}:is(#papers-0,#papers-1,#papers-2) .paper-thumb img{inset:14px;width:calc(100% - 28px);height:calc(100% - 28px)}}
+</style><style>
+:is(#papers-0,#papers-1,#papers-2) .paper-copy{grid-template-rows:auto auto auto auto;gap:10px;padding:18px 22px 20px;flex:0 0 auto}
+:is(#papers-0,#papers-1,#papers-2) .paper-copy h3{min-height:0;line-height:1.45;margin:0}
+:is(#papers-0,#papers-1,#papers-2) .paper-copy p{min-height:0;margin:0;line-height:1.65}
+:is(#papers-0,#papers-1,#papers-2) .paper-copy .paper-cta{margin:0;padding-top:4px;line-height:1.5}
+.expected-effects{margin-top:22px;padding-top:18px;border-top:1px solid #dfe6e8}
+.detail-placeholder .expected-effects h2{margin:0 0 10px;font-size:20px}
+.detail-placeholder .expected-effects p{margin:0 0 16px}
+.research-page-hero{padding-bottom:24px}.research-page-hero h1{margin-bottom:0}
+@media(max-width:650px){:is(#papers-0,#papers-1,#papers-2) .paper-copy{padding:16px 18px 18px;gap:9px}}
+</style><style>:is(#papers-0,#papers-1,#papers-2) .paper-copy{grid-template-rows:auto auto auto;gap:10px}:is(#papers-0,#papers-1,#papers-2) .paper-copy .paper-cta{padding-top:2px}</style><style>
+.detail-page[data-research="research-coordination"] .research-figures .detail-figure img{aspect-ratio:1.05;object-fit:contain;object-position:center}
+</style><style>.detail-page[data-research="research-retention"] .research-figures .detail-figure img{aspect-ratio:1.4;object-fit:contain;object-position:center}</style><style>
+.detail-page[data-research="research-logic"] .research-figures .detail-figure img,.detail-page[data-research="research-multiplexer"] .research-figures .detail-figure img{aspect-ratio:1.5;object-fit:contain;object-position:center}
+</style><style>body[data-page="research"] main :is(h1,h2,h3,h4,p,figcaption,a,button){word-break:keep-all;overflow-wrap:normal;hyphens:none}</style><link rel="icon" type="image/png" href="assets/favicon.png?v=2"><link rel="canonical" href="https://eed-lab.github.io/research.html"></head><body data-page="research"><header class="site-header">
       <a class="brand" href="index.html" aria-label="Go to home">
         <span class="brand-mark"><img src="assets/eed-lab-logo.png" alt="EED Lab logo" /></span>
         <span><strong data-lab-short>EED Lab</strong><small data-lab-subtitle>Emerging Electronic Device</small></span>
@@ -34,24 +1769,113 @@
         <a href="contact.html">Contact</a>
       </nav>
     </header>
+<main><div class="screen" id="overview"><section class="page-hero research-page-hero"><h1>Research Themes</h1></section><section class="section research-themes"><div class="research-themes-list"><section class="theme-unit">
+<article class="research-card research-theme-card">
+<div class="research-theme-image"><div class="research-visual"><img src="assets/research-neuromorphic.png" alt="Neuromorphic computing" loading="lazy"></div></div>
+<div class="research-theme-copy"><p class="eyebrow">Theme 01</p><h2>Neuromorphic computing</h2><p class="research-summary">생체 시냅스의 동작을 모사한 뉴로모픽 디바이스를 이용하여 AI 연산에 특화된 컴퓨팅 시스템을 구현합니다.</p><p class="research-detail"><strong>Problem.</strong> 기존 컴퓨팅 구조는 메모리와 연산 장치 사이의 데이터 이동이 많아 AI 연산에서 에너지와 속도 병목이 발생합니다.</p><p class="research-detail"><strong>Approach.</strong> 시냅스 가중치 변화, 기억, 신호 합산을 소자 수준에서 구현하여 메모리와 연산이 결합된 컴퓨팅 시스템을 개발합니다.</p><div class="research-keywords"><span>Neuromorphic device</span><span>Synaptic transistor</span><span>In-memory computing</span><span>AI hardware</span></div>
+<div class="more-row"><button class="more-button" aria-expanded="false" aria-controls="papers-0" data-more="0">More <span aria-hidden="true">＋</span></button></div></div></article>
+<div class="paper-list" id="papers-0" hidden><a class="paper-card" href="#research-rl" id="paper-link"><div class="paper-thumb"><img src="assets/research/figure-ee814e5c1f27.png" alt="소자 단위의 강화학습을 통한 AI 연산 효율화"></div><div class="paper-copy"><span class="eyebrow">RESEARCH 01</span><h3>소자 단위의 강화학습을 통한 AI 연산 효율화</h3><span class="paper-cta">연구 자세히 보기 ↗</span></div></a><a class="paper-card" href="#research-traffic" id="paper-link-2"><div class="paper-thumb"><img src="assets/research/figure-91a23484dfd7.png" alt="빛·전압 동시 제어를 통한 강화학습 연산과 교통 신호 최적화"></div><div class="paper-copy"><span class="eyebrow">RESEARCH 02</span><h3>빛·전압 동시 제어를 통한 강화학습 연산과 교통 신호 최적화</h3><span class="paper-cta">연구 자세히 보기 ↗</span></div></a></div>
+</section><section class="theme-unit">
+<article class="research-card research-theme-card">
+<div class="research-theme-image"><div class="research-visual"><img src="assets/research-biomimetic.png" alt="Biomimetic systems" loading="lazy"></div></div>
+<div class="research-theme-copy"><p class="eyebrow">Theme 02</p><h2>Biomimetic systems</h2><p class="research-summary">생명체의 동작을 모사한 전자 시스템을 구현하여 기존 전자 시스템의 문제점을 해결합니다.</p><p class="research-detail"><strong>Problem.</strong> 기존 전자 시스템은 고정된 회로 구조와 높은 에너지 소모로 인해 환경 변화, 복잡한 신호, 실시간 적응에 한계를 가집니다.</p><p class="research-detail"><strong>Approach.</strong> 생명체의 감각, 적응, 피드백, 자가조절 원리를 전자소자와 회로 구조에 반영하여 효율적이고 유연한 시스템을 설계합니다.</p><div class="research-keywords"><span>Biomimetic electronics</span><span>Adaptive sensing</span><span>Bio-inspired hardware</span><span>Feedback system</span></div>
+<div class="more-row"><button class="more-button" aria-expanded="false" aria-controls="papers-1" data-more="1">More <span aria-hidden="true">＋</span></button></div></div></article>
+<div class="paper-list" id="papers-1" hidden><a class="paper-card" href="#research-coordination" id="paper-link-coordination"><div class="paper-thumb"><img src="assets/research/figure-148a7f704d5b.png" alt="공유 ion gel 기반 시냅스 어레이와 로봇 손가락 협응 제어"></div><div class="paper-copy"><span class="eyebrow">RESEARCH 01</span><h3>이온 기반 거리·병렬 연산을 통한 인체 유사 로봇 손가락 협응 제어</h3><span class="paper-cta">연구 자세히 보기 ↗</span></div></a><a class="paper-card" href="#research-retention" id="paper-link-retention"><div class="paper-thumb"><img src="assets/research/figure-629d6d3cb27d.png" alt="장·단기 시냅스와 피드백 기반 운동 적응 시스템"></div><div class="paper-copy"><span class="eyebrow">RESEARCH 02</span><h3>기억 유지시간 제어와 피드백을 통한 인체 유사 운동 적응 구현</h3><span class="paper-cta">연구 자세히 보기 ↗</span></div></a></div>
+</section><section class="theme-unit">
+<article class="research-card research-theme-card">
+<div class="research-theme-image"><div class="research-visual"><img src="assets/research-post-silicon.png" alt="Post silicon device &amp; system" loading="lazy"></div></div>
+<div class="research-theme-copy"><p class="eyebrow">Theme 03</p><h2>Post silicon device &amp; system</h2><p class="research-summary">차세대 전자 재료 및 디바이스 설계를 이용하여 차세대 전자소자 및 시스템을 제작합니다.</p><p class="research-detail"><strong>Problem.</strong> 실리콘 기반 소자만으로는 초저전력, 유연한 기능, 새로운 감각 및 지능형 시스템 구현에 한계가 있습니다.</p><p class="research-detail"><strong>Approach.</strong> 2D 소재, 유기/하이브리드 재료, 이온성 계면, 광전 기능성 재료를 활용하여 포스트 실리콘 전자소자와 시스템을 설계합니다.</p><div class="research-keywords"><span>Post-silicon device</span><span>Emerging materials</span><span>Device-system integration</span></div>
+<div class="more-row"><button class="more-button" aria-expanded="false" aria-controls="papers-2" data-more="2">More <span aria-hidden="true">＋</span></button></div></div></article>
+<div class="paper-list" id="papers-2" hidden><a class="paper-card" href="#research-logic" id="paper-link-research-logic"><div class="paper-thumb"><img src="assets/research/figure-4ea22921984a.png" alt="기억 특성 설계를 통한 재구성 가능한 다중 입력 논리 연산"></div><div class="paper-copy"><span class="eyebrow">RESEARCH 01</span><h3>기억 특성 설계를 통한 재구성 가능한 다중 입력 논리 연산</h3><span class="paper-cta">연구 자세히 보기 ↗</span></div></a><a class="paper-card" href="#research-multiplexer" id="paper-link-research-multiplexer"><div class="paper-thumb"><img src="assets/research/figure-413e70a9e52c.png" alt="다중 입력 시냅스 연산을 통한 환경 변화 대응형 폐루프 제어"></div><div class="paper-copy"><span class="eyebrow">RESEARCH 02</span><h3>다중 입력 시냅스 연산을 통한 환경 변화 대응형 폐루프 제어</h3><span class="paper-cta">연구 자세히 보기 ↗</span></div></a></div>
+</section></div></section></div>
+<article class="screen detail-page" id="research-detail" hidden><button class="back-button" id="back-to-themes"><span aria-hidden="true">←</span> Research Themes로 돌아가기 <kbd>Esc</kbd></button><nav class="detail-arrows" aria-label="세부 연구 이동"><button class="detail-arrow prev" id="previous-research" aria-label="이전 연구"><span aria-hidden="true">←</span> 이전 연구</button><p class="research-counter" id="research-counter" aria-live="polite"></p><button class="detail-arrow next" id="next-research" aria-label="다음 연구">다음 연구 <span aria-hidden="true">→</span></button></nav><p class="eyebrow">THEME 01 / NEUROMORPHIC COMPUTING</p><h1 id="detail-title" tabindex="-1">소자 단위의 강화학습을 통한 AI 연산 효율화</h1><section class="detail-placeholder"><h2>연구 소개</h2><p>기존 AI 하드웨어는 다수의 트랜지스터와 주변 회로를 조합해 연산을 수행하므로, 연산 기능이 복잡해질수록 소자 수와 전력·발열 부담이 커집니다. 시냅스 소자를 도입하더라도 단순히 기존 소자를 대체하는 수준에서는 연산 구조 자체를 간소화하기 어렵습니다. 본 연구는 이러한 한계를 줄이기 위해 Au(I) complex의 광유도 쌍극자 반전과 cPVP의 전하 포획을 결합하고, 강화학습에 필요한 신호 합산을 단위 소자 내에서 구현했습니다.</p><p>Au(I) complex에서는 광여기에 따른 ligand-to-ligand charge transfer가 쌍극자 반전을 유도하고, cPVP에서는 –OH trap site에 의한 전하 포획이 전압 기반 변조를 담당합니다. 두 기전을 IGZO transistor에 결합하여 빛과 전압에 따른 가중치 조절 및 신호 합산을 구현하고, 이를 Dueling Deep Q-Network의 Value와 Advantage 결합 연산에 대응시켰습니다.</p><p>소자 수준의 연산 기능은 실측한 단일 소자 특성을 반영한 강화학습 어레이 시뮬레이션으로 평가했습니다. 자동차 게임의 high-score 및 time-attack 과제에서 행동 선택 성능을 검증했으며, 분자 쌍극자와 고분자 전하 포획을 활용한 소재 설계가 강화학습의 연산 구현으로 이어질 수 있음을 제시했습니다.</p><div class="expected-effects"><h2>기대 효과</h2><p>Au(I) complex와 cPVP가 각각 담당하는 광학적·전기적 변조를 단일 소자에 통합함으로써, 신호 합산을 위한 주변 회로의 부담을 줄이고 연산 집적도를 높일 수 있을 것으로 기대됩니다. 또한 분자의 광응답과 고분자의 전하 포획 특성을 연산 설계 변수로 활용하여, 저전력 강화학습 하드웨어를 위한 소재·소자 설계 기반을 확장할 수 있습니다.</p></div><a class="paper-source" href="https://doi.org/10.1002/adma.202516522" target="_blank" rel="noopener">논문 보기 · Advanced Materials (2026) ↗</a></section><div class="research-figures"><figure class="detail-figure"><img src="assets/research/figure-ee814e5c1f27.png" alt="소자 단위 강화학습 연구 개념도"><figcaption>01 · 소재·소자 설계와 신호 합산</figcaption></figure><figure class="detail-figure second-figure" id="additional-figure"><img src="assets/research/figure-284ae1da0757.png" alt="강화학습 과제와 광·전압 입력에 따른 소자 응답 및 가중치 분포"><figcaption>02 · 자동차 게임 시뮬레이션과 소자 응답</figcaption></figure></div></article></main><footer class="site-footer"><span data-footer>© 2026 Emerging Electronic Device Lab</span><a href="contact.html">Contact</a></footer><script>
+const overview=document.getElementById('overview');
+const detail=document.getElementById('research-detail');
+const back=document.getElementById('back-to-themes');
+let savedScroll=0,serial=0,lastLink='paper-link';
+const originalSecondImage=document.querySelector('#additional-figure img').src;
+const originalImage=document.querySelector('#research-detail .detail-figure img').src;
+const items=[{"id":"research-traffic","title":"빛·전압 동시 제어를 통한 강화학습 연산과 교통 신호 최적화","image":"assets/research/figure-91a23484dfd7.png","secondImage":"assets/research/figure-fee9a5cd854a.png","intro":"<h2>연구 소개</h2><p>기존 강화학습 하드웨어에서는 가중치를 저장하는 기능과 여러 신호를 결합하는 연산이 분리되어, 데이터 전달과 주변 회로에 추가적인 부담이 발생합니다. 이를 줄이려면 가중치를 표현하는 소자가 신호 통합까지 함께 수행할 수 있어야 합니다. 본 연구는 InAs quantum dot과 IGZO 사이의 전하 이동을 제어해 빛과 전압으로 두 가중치를 조절하고, 그 결합 결과를 하나의 아날로그 전류로 출력하는 시냅스 소자를 구현했습니다.</p><p>이때 중요한 역할을 하는 것은 양자점 표면을 둘러싼 유기 분자, OLA 리간드입니다. 이 층은 전하 이동을 제한하는 장벽으로 작용하며, 빛에 의해 생성된 전하와 전압에 따른 전하 주입이 소자 응답을 결정합니다. 이러한 계면의 전하 전달 특성을 이용해 빛의 세기에는 Value 가중치를, 게이트 전압에는 Advantage 가중치를 대응시키고, 두 입력을 동시에 인가해 행동 선택에 필요한 합산 응답을 얻었습니다.</p><p>응용 대상으로는 차량 흐름에 따라 신호를 바꾸는 교통 신호 제어를 선택했습니다. 측정된 소자 응답을 Dueling Deep Q-Network에 매핑하고 SUMO 시뮬레이션에서 신호 선택과 차량 대기 성능을 평가했습니다. 이상적인 소프트웨어 조건과의 비교를 통해, 양자점 계면에서 구현한 아날로그 연산을 교통 제어의 의사결정에 활용할 수 있음을 검증했습니다.</p><div class=\"expected-effects\"><h2>기대 효과</h2><p>빛의 세기와 게이트 전압으로 두 가중치를 조절하는 방식은 강화학습의 행동 선택 연산을 아날로그 소자에서 처리하는 기반이 될 수 있습니다. 이를 교통 신호 제어에 적용하면 차량 흐름에 따른 신호 선택을 효율화하고 대기 시간과 혼잡을 줄이는 데 기여할 것으로 기대됩니다. 향후 소자 어레이와 제어 회로를 통합하면 현장형 지능 제어 시스템으로의 확장을 검토할 수 있습니다.</p></div><a class=\"paper-source\" href=\"https://doi.org/10.1002/advs.202521293\" target=\"_blank\" rel=\"noopener\">논문 보기 · Advanced Science (2026) ↗</a>","caption":"01 · 양자점 기반 소자와 빛·전압 신호 합산","secondCaption":"02 · 강화학습 연산 매핑과 교통 신호 제어 시뮬레이션"},{"id":"research-coordination","title":"이온 기반 거리·병렬 연산을 통한 인체 유사 로봇 손가락 협응 제어","theme":"THEME 02 / BIOMIMETIC SYSTEMS","image":"assets/research/figure-148a7f704d5b.png","secondImage":"assets/research/figure-7ade9465dab1.png","caption":"01 · 공유 ion gel 기반 시냅스 어레이와 로봇 손 제어 구조","secondCaption":"02 · 다중 입력에 따른 손가락 협응과 물체 파지 실증","intro":"<h2>연구 소개</h2><p>기존 로봇 손 제어에서는 여러 손가락의 움직임을 조합할수록 개별 구동 명령과 신호 처리 회로가 복잡해집니다. 특히 물체의 형태에 맞춰 손가락별 굽힘을 다르게 조절하려면 다수의 제어 신호를 조율해야 합니다. 본 연구는 공유 ion gel 내 이온 이동을 이용해 하나의 입력을 여러 구동 신호로 분배하고, 입력 위치와 소자 사이의 거리를 활용하여 로봇 손가락의 협응 동작을 구현했습니다.</p><p>P3HT 기반 시냅스 트랜지스터 8개가 하나의 ion gel을 공유하는 parallel-processable synaptic array(PPSA)를 구성했습니다. 게이트와 채널 사이의 거리에 따라 이온 전달과 시냅스 응답이 달라지므로, 단일 입력에서도 서로 다른 세기의 출력을 동시에 얻을 수 있습니다. 여기에 다중 입력의 potentiation과 depression을 결합해 각 출력의 크기를 조절하고, 로봇 손가락의 굽힘 정도를 조정했습니다.</p><p>시냅스 어레이를 증폭 회로와 NiTi shape-memory alloy 기반의 세 손가락 로봇 손에 연결하여 파지 동작을 검증했습니다. 단일 입력으로 세 손가락의 굽힘 각도를 다르게 제어해 컵과 숟가락 형태의 물체를 안정적으로 잡았으며, 두 입력의 potentiation과 depression을 결합해 손가락별 움직임을 세밀하게 조정했습니다. 이를 통해 하나 또는 두 개의 입력으로 여러 손가락의 움직임을 함께 제어하는 인체 유사 협응 동작을 구현했습니다.</p><div class=\"expected-effects\"><h2>기대 효과</h2><p>공간적 신호 분배와 아날로그 multiplexing을 소자 어레이에서 수행하면, 여러 구동기를 제어하는 데 필요한 입력과 주변 회로의 복잡도를 줄일 수 있습니다. 이러한 제어 구조는 다관절 로봇 손과 생체모사 구동 시스템에서 유기적인 움직임을 구현하는 기반으로 활용될 것으로 기대됩니다.</p></div><a class=\"paper-source\" href=\"https://doi.org/10.1038/s41467-022-34324-3\" target=\"_blank\" rel=\"noopener\">논문 보기 · Nature Communications (2023) ↗</a>"},{"id":"research-retention","title":"기억 유지시간 제어와 피드백을 통한 인체 유사 운동 적응 구현","theme":"THEME 02 / BIOMIMETIC SYSTEMS","image":"assets/research/figure-629d6d3cb27d.png","secondImage":"assets/research/figure-fd6918997edf.png","caption":"01 · 장·단기 시냅스와 인체 유사 운동 제어 시스템","secondCaption":"02 · 반복 자극과 양성 피드백에 따른 구동 응답 변화","intro":"<h2>연구 소개</h2><p>기존 로봇은 정해진 움직임을 정밀하게 재현할 수 있지만, 반복된 자극의 이력을 축적해 이후의 운동 반응을 변화시키는 기능까지 구현하려면 별도의 기억과 제어 과정이 필요합니다. 본 연구는 시냅스 소자의 기억 유지시간(retention)을 설계하여 이러한 적응 기능을 소자와 구동기의 결합으로 구현했습니다. 장기 응답을 담당하는 chronic synapse(CS)와 단기 응답을 담당하는 acute synapse(AS)를 연결하고, 두 경로 사이의 피드백으로 누적된 자극 이력이 순간적인 운동 반응에 반영되도록 했습니다.</p><p>P3HT와 ion gel 기반 시냅스 소자에서 게이트의 Ag/AgCl 코팅량을 조절해 게이트–전해질 계면의 전압 분배와 기억 유지시간을 제어했습니다. 이를 통해 자극 이력을 유지하는 CS와 빠르게 감쇠하는 AS를 구성했습니다. 또한 ion gel의 이온 이동을 이용한 병렬 신호 처리로 외부 입력과 피드백 신호를 함께 반영하도록 설계했습니다.</p><p>두 시냅스를 NiTi 기반 actuator와 연결하고 반복 자극과 휴식을 인가한 결과, CS에서는 자극 이력이 누적되어 구동 상태가 유지되고 AS에서는 일시적인 운동 응답이 나타났습니다. CS에서 AS로 전달되는 양성 피드백을 추가하자, 피드백이 없는 조건과 달리 반복 자극에 따라 AS의 구동 응답도 증가했습니다. 이로써 장기적인 상태 변화와 단기적인 운동 증강을 함께 구현하여, 반복 운동에 따른 인체의 근육 성장과 운동 능력 향상에 대응하는 적응 과정을 시냅스–actuator 시스템에서 물리적으로 모사했습니다.</p><div class=\"expected-effects\"><h2>기대 효과</h2><p>기억 유지시간이 다른 소자와 피드백을 결합하면, 자극 이력에 따라 반응이 달라지는 제어 기능을 하드웨어에 부여할 수 있습니다. 이러한 구조는 복잡한 연산 시스템에 대한 의존도를 줄이면서 누적 경험과 즉각적인 반응을 함께 처리하는 생체모사 로봇 제어의 기반이 될 것으로 기대됩니다.</p></div><a class=\"paper-source\" href=\"https://doi.org/10.1126/sciadv.adn6217\" target=\"_blank\" rel=\"noopener\">논문 보기 · Science Advances (2024) ↗</a>"},{"id":"research-logic","title":"기억 특성 설계를 통한 재구성 가능한 다중 입력 논리 연산","image":"assets/research/figure-4ea22921984a.png","secondImage":"assets/research/figure-ae907d7f35c6.png","caption":"01 · 장·단기 기억을 결합한 재구성 논리 소자","secondCaption":"02 · 논리 모드 설정과 다중 입력 기반 위험 분류 시연","intro":"<h2>연구 소개</h2><p>기존 논리 회로에서 여러 아날로그 입력을 처리하고 판단 조건까지 바꾸려면 신호 변환과 논리 설정을 위한 회로가 추가됩니다. 시냅스 소자의 병렬 처리 기능을 활용하더라도, 입력을 통합하는 기능과 연산 모드를 유지·변경하는 기능을 함께 구현하는 것이 과제로 남습니다. 본 연구는 기억 유지시간이 다른 두 시냅스 소자를 결합하여, 장기 기억으로 논리 모드를 설정하고 단기 기억으로 다중 입력을 처리하는 재구성 가능한 아날로그 연산 구조를 구현했습니다.</p><p>유기 반도체의 side-chain engineering을 통해 이온 이동과 기억 특성을 조절하고, PIDTC16-BT 기반의 장기 기억 소자와 PIDTPEG-BT 기반의 단기 기억 소자를 구성했습니다. 장기 기억 소자가 설정한 상태에 따라 다중 입력의 합산 응답을 해석하는 논리 모드가 달라지도록 설계하여, 동일한 소자 구성에서 재구성 가능한 논리 연산을 수행했습니다.</p><p>이 구조를 개인별 조건을 반영한 질병 위험 분류의 개념검증에 적용했습니다. 설정 입력과 여러 지표를 모사한 신호를 구분해 인가하고, 설정 상태와 입력 조합에 따라 출력이 달라지는 것을 확인했습니다. 이를 통해 회로를 교체하지 않고도 연산 조건을 변경하면서 여러 아날로그 입력을 함께 처리할 수 있음을 소자 기반 논리 시스템에서 검증했습니다.</p><div class=\"expected-effects\"><h2>기대 효과</h2><p>기억 특성을 논리 모드 설정과 입력 처리에 각각 활용하면, 다양한 조건에 대응하는 연산 기능을 간결한 소자 구성으로 구현할 수 있습니다. 향후 센서 신호를 병렬로 통합하고 사용자나 환경에 따라 판단 조건을 변경하는 맞춤형 신호 처리 하드웨어에 활용될 것으로 기대됩니다.</p></div><a class=\"paper-source\" href=\"https://doi.org/10.1002/adfm.202312988\" target=\"_blank\" rel=\"noopener\">논문 보기 · Advanced Functional Materials (2024) ↗</a>","theme":"THEME 03 / POST SILICON DEVICE & SYSTEM"},{"id":"research-multiplexer","title":"다중 입력 시냅스 연산을 통한 환경 변화 대응형 폐루프 제어","image":"assets/research/figure-413e70a9e52c.png","secondImage":"assets/research/figure-ec70c6022871.png","caption":"01 · 시냅스 multiplexer 기반 다중 입력 폐루프 제어 구조","secondCaption":"02 · 굽힘 피드백과 온도 입력을 이용한 구동 보정","intro":"<h2>연구 소개</h2><p>기존의 순차적 신호 처리 구조에서는 구동 명령, 센서 피드백, 환경 정보를 함께 다룰수록 처리 단계와 제어 회로가 늘어납니다. 또한 구동 상태만을 이용한 피드백으로는 온도 변화가 actuator에 미치는 영향을 충분히 보정하기 어렵습니다. 본 연구는 ion gel 기반 synaptic multiplexer에서 구동 입력과 피드백, 온도 보정 신호를 병렬로 통합하여 환경 변화에 대응하는 다중 입력 폐루프 제어 시스템을 구현했습니다.</p><p>섬유형 P3HT 시냅스 소자에 다중 게이트를 구성하고, 서로 다른 입력이 채널의 전도도에 함께 영향을 주도록 설계했습니다. 이 synaptic multiplexer를 굽힘 센서와 NiTi 기반 soft actuator에 연결하여, 측정된 굽힘 상태가 다시 입력으로 전달되는 폐루프를 구성했습니다. 여기에 온도에 따른 보정 신호를 추가해 구동 상태와 외부 환경을 동시에 반영했습니다.</p><p>통합 시스템에서 굽힘 피드백에 따른 구동 조절을 확인하고, 주변 온도 변화에 대한 보정 효과를 비교했습니다. 온도가 높아져 actuator의 굽힘이 달라지는 조건에서도 온도 입력을 함께 처리하면 과도한 굽힘을 줄일 수 있었습니다. 이를 통해 하나의 시냅스 multiplexer가 구동 입력과 상태 피드백, 환경 보정 신호를 병렬로 처리하여 환경 변화에 대응하는 폐루프 제어를 수행할 수 있음을 검증했습니다.</p><div class=\"expected-effects\"><h2>기대 효과</h2><p>제어에 필요한 여러 신호를 소자 수준에서 통합하면, 센서와 구동기 사이의 신호 처리 회로를 단순화할 수 있습니다. 이러한 방식은 환경 변화와 동작 상태를 함께 반영해야 하는 소프트 로봇과 생체모사 구동 시스템의 제어 효율을 높이는 기반이 될 것으로 기대됩니다.</p></div><a class=\"paper-source\" href=\"https://doi.org/10.1126/sciadv.abn1838\" target=\"_blank\" rel=\"noopener\">논문 보기 · Science Advances (2022) ↗</a>","theme":"THEME 03 / POST SILICON DEVICE & SYSTEM"}];
+items.unshift({id:'research-rl',title:'소자 단위의 강화학습을 통한 AI 연산 효율화',image:originalImage});
+document.querySelectorAll('.paper-card').forEach(link=>link.addEventListener('click',()=>{lastLink=link.id;}));
+document.querySelectorAll('[data-more]').forEach(button=>button.addEventListener('click',()=>{
+ const panel=document.getElementById(button.getAttribute('aria-controls'));
+ const open=button.getAttribute('aria-expanded')!=='true';
+ button.setAttribute('aria-expanded',String(open));panel.hidden=!open;
+ button.innerHTML=open?'Less <span aria-hidden="true">−</span>':'More <span aria-hidden="true">＋</span>';
+}));
 
-    <main>
-      <section class="page-hero research-page-hero">
-        <p class="eyebrow">Research Themes</p>
-        <h1>Research</h1>
-        <p data-research-intro>생명체 모사 전자 시스템, 뉴로모픽 컴퓨팅, 포스트 실리콘 소자 및 시스템을 중심으로 차세대 지능형 전자 시스템을 연구합니다.</p>
-      </section>
-      <section class="section research-themes">
-        <div class="research-themes-list" data-research-areas></div>
-      </section>
-    </main>
+let currentId=null,direction=1;
+const introduction="<h2>연구 소개</h2><p>기존 AI 하드웨어는 다수의 트랜지스터와 주변 회로를 조합해 연산을 수행하므로, 연산 기능이 복잡해질수록 소자 수와 전력·발열 부담이 커집니다. 시냅스 소자를 도입하더라도 단순히 기존 소자를 대체하는 수준에서는 연산 구조 자체를 간소화하기 어렵습니다. 본 연구는 이러한 한계를 줄이기 위해 Au(I) complex의 광유도 쌍극자 반전과 cPVP의 전하 포획을 결합하고, 강화학습에 필요한 신호 합산을 단위 소자 내에서 구현했습니다.</p><p>Au(I) complex에서는 광여기에 따른 ligand-to-ligand charge transfer가 쌍극자 반전을 유도하고, cPVP에서는 –OH trap site에 의한 전하 포획이 전압 기반 변조를 담당합니다. 두 기전을 IGZO transistor에 결합하여 빛과 전압에 따른 가중치 조절 및 신호 합산을 구현하고, 이를 Dueling Deep Q-Network의 Value와 Advantage 결합 연산에 대응시켰습니다.</p><p>소자 수준의 연산 기능은 실측한 단일 소자 특성을 반영한 강화학습 어레이 시뮬레이션으로 평가했습니다. 자동차 게임의 high-score 및 time-attack 과제에서 행동 선택 성능을 검증했으며, 분자 쌍극자와 고분자 전하 포획을 활용한 소재 설계가 강화학습의 연산 구현으로 이어질 수 있음을 제시했습니다.</p><div class=\"expected-effects\"><h2>기대 효과</h2><p>Au(I) complex와 cPVP가 각각 담당하는 광학적·전기적 변조를 단일 소자에 통합함으로써, 신호 합산을 위한 주변 회로의 부담을 줄이고 연산 집적도를 높일 수 있을 것으로 기대됩니다. 또한 분자의 광응답과 고분자의 전하 포획 특성을 연산 설계 변수로 활용하여, 저전력 강화학습 하드웨어를 위한 소재·소자 설계 기반을 확장할 수 있습니다.</p></div><a class=\"paper-source\" href=\"https://doi.org/10.1002/adma.202516522\" target=\"_blank\" rel=\"noopener\">논문 보기 · Advanced Materials (2026) ↗</a>";
+const previous=document.getElementById('previous-research');
+const nextButton=document.getElementById('next-research');
+function navigateResearch(step){
+ const current=items.find(p=>'#'+p.id===location.hash);
+ if(!current)return;
+ const group=items.filter(p=>(p.theme||'THEME 01 / NEUROMORPHIC COMPUTING')===(current.theme||'THEME 01 / NEUROMORPHIC COMPUTING'));
+ const index=group.indexOf(current);
+ direction=step;
+ location.hash=group[(index+step+group.length)%group.length].id;
+}
+previous.addEventListener('click',()=>navigateResearch(-1));
+nextButton.addEventListener('click',()=>navigateResearch(1));
+addEventListener('keydown',event=>{
+ if(event.key==='Escape'&&location.hash.startsWith('#research-')){event.preventDefault();location.hash='themes';return;}
+ if(detail.hidden||event.altKey||event.ctrlKey||event.metaKey||event.target.closest('input,textarea,select,[contenteditable="true"]'))return;
+ if(event.key==='ArrowLeft'){event.preventDefault();navigateResearch(-1);}
+ if(event.key==='ArrowRight'){event.preventDefault();navigateResearch(1);}
+});
+function showDetail(animate=true){
+ const item=items.find(p=>'#'+p.id===location.hash);
+ const isDetail=Boolean(item),alreadyDetail=!detail.hidden;
+ if(item){
+  const index=items.indexOf(item);
+  document.getElementById('detail-title').textContent=item.title;
+  const figure=document.querySelector('#research-detail .detail-figure img');figure.src=item.image;figure.alt=item.title;
+  detail.dataset.research=item.id;
+  document.querySelector('#research-detail > .eyebrow').textContent=item.theme||'THEME 01 / NEUROMORPHIC COMPUTING';
+  document.getElementById('additional-figure').hidden=!(item.id==='research-rl'||item.secondImage);
+  const secondFigure=document.querySelector('#additional-figure img');
+  secondFigure.src=item.id==='research-rl'?originalSecondImage:(item.secondImage||'');
+  secondFigure.alt=item.id==='research-rl'?'자동차 게임 시뮬레이션과 소자 응답':(item.secondCaption||'');
+  document.querySelector('#additional-figure figcaption').textContent=item.id==='research-rl'?'02 · 자동차 게임 시뮬레이션과 소자 응답':(item.secondCaption||'');
+  document.querySelector('.detail-placeholder').innerHTML=item.id==='research-rl'?introduction:item.intro;
+  document.querySelector('.research-figures figcaption').textContent=item.id==='research-rl'?'01 · 소재·소자 설계와 신호 합산':item.caption||'배치 확인용 개념 이미지';
+  const themeItems=items.filter(candidate=>(candidate.theme||'THEME 01 / NEUROMORPHIC COMPUTING')===(item.theme||'THEME 01 / NEUROMORPHIC COMPUTING'));
+  document.getElementById('research-counter').textContent=String(themeItems.indexOf(item)+1).padStart(2,'0')+' / '+String(themeItems.length).padStart(2,'0');
+  previous.setAttribute('aria-label','이전 연구: '+themeItems[(themeItems.indexOf(item)-1+themeItems.length)%themeItems.length].title);
+  nextButton.setAttribute('aria-label','다음 연구: '+themeItems[(themeItems.indexOf(item)+1)%themeItems.length].title);
+  previous.title=previous.getAttribute('aria-label');nextButton.title=nextButton.getAttribute('aria-label');
+ }
+ if(isDetail&&alreadyDetail){
+  if(currentId!==item.id){
+   detail.classList.remove('switch-left','switch-right');void detail.offsetWidth;
+   detail.classList.add(direction>0?'switch-left':'switch-right');
+   window.scrollTo({top:0,behavior:'instant'});
+   document.getElementById('detail-title').focus({preventScroll:true});
+  }
+  currentId=item.id;return;
+ }
+ currentId=item?.id||null;
+ if(isDetail===alreadyDetail){++serial;overview.inert=false;detail.inert=false;overview.classList.remove('leaving','entering');detail.classList.remove('leaving','entering');return;}
+ const current=isDetail?overview:detail,next=isDetail?detail:overview;
+ const run=++serial;
+ if(isDetail)savedScroll=window.scrollY;
+ current.inert=true;current.classList.add('leaving');
+ const duration=animate&&!matchMedia('(prefers-reduced-motion: reduce)').matches?360:0;
+ setTimeout(()=>{
+  if(run!==serial)return;
+  current.hidden=true;current.classList.remove('leaving','switch-left','switch-right');current.inert=false;
+  next.classList.add('entering');next.hidden=false;
+  window.scrollTo({top:isDetail?0:savedScroll,behavior:'instant'});
+  requestAnimationFrame(()=>requestAnimationFrame(()=>next.classList.remove('entering')));
+  (isDetail?document.getElementById('detail-title'):document.getElementById(lastLink)).focus({preventScroll:true});
+ },duration);
+}
+back.addEventListener('click',()=>{location.hash='themes';});
+addEventListener('hashchange',()=>showDetail());
+showDetail(false);
 
-    <footer class="site-footer"><span data-footer>© 2026 Emerging Electronic Device Lab</span><a href="contact.html">Contact</a></footer>
-    <script src="data.js"></script>
-    <script src="script.js"></script>
-  </body>
-</html>
-
-
-
-
+const menuButton=document.querySelector('.menu-button'),siteNav=document.querySelector('.site-nav');
+menuButton.addEventListener('click',()=>{const open=menuButton.getAttribute('aria-expanded')!=='true';menuButton.setAttribute('aria-expanded',String(open));siteNav.classList.toggle('is-open',open);});
+</script></body></html>
