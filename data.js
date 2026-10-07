@@ -210,7 +210,15 @@ window.siteData = {
       "note": "Current affiliation from September 2026",
       "email": "dongkuy1124@hanyang.ac.kr"
     },
-    "students": [],
+    "students": [
+      {
+        "name": "주동천 (Dongcheon Joo)",
+        "role": "Undergraduate",
+        "period": "2026.09 ~",
+        "topic": "Research Area: Neuromorphic Device",
+        "photo": ""
+      }
+    ],
     "alumni": [],
     "education": [
       {

@@ -466,18 +466,19 @@ const renderMembers = () => {
           ? `<img class="member-photo" src="${member.photo}" alt="${escapeHtml(member.name || "Member photo")}" />`
           : `<div class="avatar photo-placeholder" aria-label="Photo placeholder"></div>`;
         const uploadButton = `
-          <label class="editor-photo-upload" data-upload-member-photo="${memberType}" data-member-index="${items.indexOf(member)}">
+          <label class="editor-photo-upload" data-upload-member-photo="${memberType}" data-member-index="${(memberType === "student" ? data.members.students : items).indexOf(member)}">
             Upload Photo
-            <input type="file" accept="image/*" data-member-photo-input data-upload-member-photo="${memberType}" data-member-index="${items.indexOf(member)}" />
+            <input type="file" accept="image/*" data-member-photo-input data-upload-member-photo="${memberType}" data-member-index="${(memberType === "student" ? data.members.students : items).indexOf(member)}" />
           </label>
         `;
         const emailLink = member.email ? `<a href="mailto:${escapeHtml(member.email)}">${escapeHtml(member.email)}</a>` : "";
         return `
           <article class="profile member-card">
-            <div class="member-photo-wrap" data-photo-target="${memberType}" data-member-index="${items.indexOf(member)}">${photo}${uploadButton}</div>
+            <div class="member-photo-wrap" data-photo-target="${memberType}" data-member-index="${(memberType === "student" ? data.members.students : items).indexOf(member)}">${photo}${uploadButton}</div>
             <div>
               <h3 class="member-name">${escapeHtml(member.name || "New Member")}</h3>
-              <p class="role">${escapeHtml(member.role || "")}</p>
+              ${member.period ? `<p class="member-period">${escapeHtml(member.period)}</p>` : ""}
+              ${memberType !== "student" ? `<p class="role">${escapeHtml(member.role || "")}</p>` : ""}
               <p>${escapeHtml(member.topic || "")}</p>
               ${emailLink}
             </div>
@@ -487,7 +488,28 @@ const renderMembers = () => {
       .join("");
   };
 
-  renderMemberCards("[data-students]", data.members.students, "차세대 전자 소자 연구에 관심 있는 학생을 모집합니다.", "student");
+  const students = data.members.students || [];
+  const studentGrid = document.querySelector("[data-students]");
+  if (studentGrid && students.length) {
+    const groups = [...new Set(students.map(member => member.role || "Students"))];
+    setText("#students .section-heading h2", groups[0]);
+    studentGrid.innerHTML = "";
+    groups.forEach((role, index) => {
+      if (index > 0) {
+        const heading = document.createElement("h2");
+        heading.className = "student-category-heading";
+        heading.textContent = role;
+        studentGrid.appendChild(heading);
+      }
+      const group = document.createElement("div");
+      group.className = "member-card-grid";
+      group.id = `student-category-${index}`;
+      studentGrid.appendChild(group);
+      renderMemberCards(`#${group.id}`, students.filter(member => (member.role || "Students") === role), "", "student");
+    });
+  } else {
+    renderMemberCards("[data-students]", students, "차세대 전자 소자 연구에 관심 있는 학생을 모집합니다.", "student");
+  }
   renderMemberCards("[data-alumni]", data.members.alumni, "", "alumni");
 };
 

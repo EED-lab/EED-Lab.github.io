@@ -522,6 +522,26 @@ h3 {
   align-items: flex-start;
 }
 
+/* Compact student categories and photo slots. */
+.students-page .page-hero { padding-top: 44px; padding-bottom: 32px; }
+.students-page .members-section { padding-top: 32px; padding-bottom: 40px; }
+.students-page [data-students] { display: block; }
+.students-page .section-heading h2,
+.students-page .student-category-heading { font-size: 28px; }
+.students-page .student-category-heading { margin: 28px 0 14px; }
+.students-page .member-card-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 480px)); }
+.students-page .member-card { padding: 16px; gap: 18px; align-items: center; }
+.students-page .member-photo-wrap { width: 96px; height: 116px; }
+.students-page .member-card .member-name { margin: 0 0 12px; font-size: 20px; }
+.students-page .member-card p { margin: 0; line-height: 1.5; }
+.students-page .member-card .member-period { margin: -4px 0 8px; font-size: 14px; }
+@media (max-width: 520px) {
+  .students-page .member-card { flex-direction: row; gap: 14px; padding: 14px; }
+  .students-page .member-photo-wrap { width: 72px; height: 90px; }
+  .students-page .member-card .member-name { font-size: 17px; }
+  .students-page .member-card p { font-size: 14px; }
+}
+
 .member-photo-wrap {
   position: relative;
   display: grid;
