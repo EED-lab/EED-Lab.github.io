@@ -247,7 +247,7 @@ window.siteData = {
       {
         "title": "Visiting Scholar",
         "details": [
-          "University of Pennsylvania, Sept. 2025 - Present",
+          "University of Pennsylvania, Sept. 2025 - 2026.08",
           "Advisor: Prof. Deep Jariwala"
         ]
       },
