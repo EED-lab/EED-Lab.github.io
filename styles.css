@@ -1711,3 +1711,30 @@ body[data-page="home"] .notice-copyright {
 .publication-period { display: grid; gap: 34px; min-width: 0; }
 .publication-period-title { margin: 0; padding-bottom: 16px; border-bottom: 2px solid var(--teal); color: #000; font-size: clamp(24px, 3vw, 34px); line-height: 1.25; }
 .publication-period + .publication-period { margin-top: 20px; }
+
+.students-page .member-subsection { min-width: 0; }
+.students-page .member-card-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px 18px; }
+.students-page .member-card { display:flex; flex-direction:row; align-items:center; min-width:0; gap:clamp(14px,1.6vw,24px); padding:12px; }
+.students-page .member-photo-wrap { flex:none; width:clamp(124px,12vw,168px); height:auto; aspect-ratio:1 / 1.05; }
+.students-page .member-photo { object-position:center 35%; }
+.students-page .member-card > div:last-child { min-width:0; flex:1; }
+.students-page .member-card .member-name { font-size:clamp(25px,2.1vw,32px); line-height:1.12; font-weight:750; margin:0; }
+.students-page .member-name span { display:block; color:var(--graphite); font-size:0.62em; font-weight:550; line-height:1.2; margin-top:3px; }
+.students-page .member-card .research { font-size:clamp(16px,1.3vw,20px); line-height:1.24; margin:10px 0 0; color:var(--ink); font-weight:600; }
+.students-page .research small { display:block; margin-bottom:2px; color:var(--muted); font-size:12px; font-weight:600; }
+.students-page .member-card a { display:inline-block; margin-top:6px; font-size:clamp(14px,1.05vw,16px); line-height:1.2; font-weight:500; overflow-wrap:anywhere; }
+.students-page .member-card .member-period { margin:4px 0 0; font-size:13px; line-height:1.2; }
+@media(max-width:700px){.students-page .member-card-grid {grid-template-columns:1fr;} .students-page .member-photo-wrap {width:clamp(108px,29vw,145px);} }
+
+.students-page .member-card .member-period { margin:5px 0 0; font-size:14px; }
+.students-page .member-card .research { margin-top:14px; font-size:clamp(18px,1.5vw,22px); line-height:1.22; }
+.students-page .research small { font-size:15px; line-height:1.2; margin-bottom:3px; }
+
+
+.students-page .member-card .member-name { font-size:26px; line-height:1.15; color:var(--ink); }
+.students-page .member-card :is(.member-name span,.member-period,.research small,.contact-line) { font-size:16px; line-height:1.35; font-weight:400; color:var(--muted); }
+.students-page .member-card .research { font-size:16px; line-height:1.35; margin-top:12px; font-weight:600; color:var(--ink); }
+.students-page .member-card .contact-line { margin:6px 0 0; overflow-wrap:anywhere; }
+.students-page .member-card .contact-line a { display:inline; font-size:inherit; color:var(--teal); font-weight:500; text-decoration:underline; text-underline-offset:3px; }
+.students-page .member-card .research small { color:var(--teal); font-weight:600; }
+.students-page .member-card .member-name span { display:inline; margin:0; white-space:nowrap; }

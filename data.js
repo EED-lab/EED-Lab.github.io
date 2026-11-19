@@ -214,9 +214,42 @@ window.siteData = {
       {
         "name": "주동천 (Dongcheon Joo)",
         "role": "Undergraduate",
-        "period": "2026.09 ~",
-        "topic": "Research Area: Neuromorphic Device",
+        "period": "Join the group: 2026.09",
+        "topic": "Neuromorphic Device",
+        "email": "wnehdcjs118@hanyang.ac.kr",
         "photo": ""
+      },
+      {
+        "name": "박시후 (Park Si Hu)",
+        "role": "Undergraduate",
+        "period": "Join the group: 2026.09",
+        "topic": "Post silicon device & system",
+        "email": "mzlapq14@hanyang.ac.kr",
+        "photo": ""
+      },
+      {
+        "name": "이기훈 (Lee Keehoon)",
+        "role": "Undergraduate",
+        "period": "Join the group: 2026.09",
+        "topic": "Neuromorphic computing",
+        "email": "nooheek34@hanyang.ac.kr",
+        "photo": "assets/students/lee-keehoon.jpg"
+      },
+      {
+        "name": "민형호 (Min Hyung Ho)",
+        "role": "Undergraduate",
+        "period": "Join the group: 2026.09",
+        "topic": "Biomimetic systems",
+        "email": "minhh5944@hanyang.ac.kr",
+        "photo": "assets/students/min-hyung-ho.jpg"
+      },
+      {
+        "name": "김찬 (Kim Chan)",
+        "role": "Undergraduate",
+        "period": "Join the group: 2026.09",
+        "topic": "Post silicon device & system",
+        "email": "grimm041220@hanyang.ac.kr",
+        "photo": "assets/students/kim-chan.jpg"
       }
     ],
     "alumni": [],

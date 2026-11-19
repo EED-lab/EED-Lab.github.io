@@ -471,16 +471,23 @@ const renderMembers = () => {
             <input type="file" accept="image/*" data-member-photo-input data-upload-member-photo="${memberType}" data-member-index="${(memberType === "student" ? data.members.students : items).indexOf(member)}" />
           </label>
         `;
+        const isStudent = memberType === "student";
+        const fullName = escapeHtml(member.name || "New Member");
+        const name = isStudent ? fullName.replace(/ (\([^()]+\))$/, ' <span lang="en">$1</span>') : fullName;
+        const topic = escapeHtml(member.topic || "");
+        const research = isStudent
+          ? `<p class="research"><small>Research Area</small>${topic.replace(/^Research Area:\s*/i, "")}</p>`
+          : `<p>${topic}</p>`;
         const emailLink = member.email ? `<a href="mailto:${escapeHtml(member.email)}">${escapeHtml(member.email)}</a>` : "";
         return `
           <article class="profile member-card">
             <div class="member-photo-wrap" data-photo-target="${memberType}" data-member-index="${(memberType === "student" ? data.members.students : items).indexOf(member)}">${photo}${uploadButton}</div>
             <div>
-              <h3 class="member-name">${escapeHtml(member.name || "New Member")}</h3>
+              <h3 class="member-name">${name}</h3>
               ${member.period ? `<p class="member-period">${escapeHtml(member.period)}</p>` : ""}
               ${memberType !== "student" ? `<p class="role">${escapeHtml(member.role || "")}</p>` : ""}
-              <p>${escapeHtml(member.topic || "")}</p>
-              ${emailLink}
+              ${research}
+              ${isStudent && emailLink ? `<p class="contact-line">Contact: ${emailLink}</p>` : emailLink}
             </div>
           </article>
         `;
